@@ -1,0 +1,67 @@
+﻿@model WebsiteAddDto
+@{
+    ModalViewModel modal = ViewBag.ModalModel;
+}
+
+<form id="websiteAddFormData" asp-action="WebsiteAdd" asp-controller="Website" method="post" enctype="multipart/form-data">
+    <div id="websiteAddFormAlert" class="alert alert-warning" style="display:none" role="alert"></div>
+    <div class="form-group">
+        <label>Name</label>
+        <input class="form-control w-100" type="text" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label>Url</label>
+        <input class="form-control w-100" type="url" asp-for="BaseUrl" />
+        <span asp-validation-for="BaseUrl"></span>
+    </div>
+    <div class="custom-file">
+        <label id="selectedFileName" class="custom-file-label">Dosya Seçilmedi</label>
+        <input type="file" class="custom-file-input" asp-for="Icon" />
+        <span asp-validation-for="Icon"></span>
+    </div>
+</form>
+
+<scripts>
+    <script>
+        $("#websiteAddFormData").submit(function (event) {
+            event.preventDefault();
+            var post_url = $(this).attr("action");
+            var request_method = $(this).attr("method");
+            var form_data = new FormData(this);
+
+            $.ajax({
+                url: post_url,
+                type: request_method,
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false
+            }).done(function (response) {
+                if (!response.isOk) {
+                    $('#websiteAddFormAlert').html(response.massage);
+                    $('#websiteAddFormAlert').show();
+                }
+                else {
+                    $('#@modal.Name').modal('hide');
+                    window.location.reload();
+                }
+            });
+        });
+
+        $('#@modal.Submit').click(() => {
+            $("#websiteAddFormData").submit();
+        });
+
+        $('#Icon').change(() => {
+            var file = $('#Icon').prop('files')[0];
+            var fileName = "Dosya Seçilmedi";
+            if (file) {
+                fileName = file.name;
+            }
+            $('#selectedFileName').text(fileName);
+        });
+    </script>
+</scripts>
+   
+

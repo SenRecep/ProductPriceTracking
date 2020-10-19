@@ -1,0 +1,336 @@
+2020-10-15 20:03:48.198 +03:00 [INF] Starting up
+2020-10-15 20:03:50.675 +03:00 [INF] User profile is available. Using 'C:\Users\recep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-10-15 20:03:51.736 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-10-15 20:03:51.747 +03:00 [INF] Hosting environment: Development
+2020-10-15 20:03:51.749 +03:00 [INF] Content root path: C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi
+2020-10-15 20:03:51.801 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/  
+2020-10-15 20:03:51.826 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi)'
+2020-10-15 20:03:51.893 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller ProductPriceTracking.MvcUi.Controllers.HomeController (ProductPriceTracking.MvcUi).
+2020-10-15 20:03:52.012 +03:00 [INF] Executing ViewResult, running view Index.
+2020-10-15 20:03:52.180 +03:00 [INF] Executed ViewResult - view Index executed in 222.4841ms.
+2020-10-15 20:03:52.185 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi) in 288.8096ms
+2020-10-15 20:03:52.190 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi)'
+2020-10-15 20:03:52.198 +03:00 [INF] Request finished in 400.6301ms 200 text/html; charset=utf-8
+2020-10-15 20:03:52.245 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/css/site.css  
+2020-10-15 20:03:52.246 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/lib/jquery/dist/jquery.min.js  
+2020-10-15 20:03:52.248 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/lib/bootstrap/dist/js/bootstrap.bundle.min.js  
+2020-10-15 20:03:52.245 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/lib/bootstrap/dist/css/bootstrap.min.css  
+2020-10-15 20:03:52.248 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2020-10-15 20:03:52.275 +03:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\wwwroot\js\site.js'
+2020-10-15 20:03:52.278 +03:00 [INF] Request finished in 29.9811ms 200 application/javascript
+2020-10-15 20:03:52.282 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\wwwroot\css\site.css'
+2020-10-15 20:03:52.288 +03:00 [INF] Request finished in 43.0901ms 200 text/css
+2020-10-15 20:03:52.309 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2020-10-15 20:03:52.317 +03:00 [INF] Request finished in 72.4431ms 200 text/css
+2020-10-15 20:03:52.324 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2020-10-15 20:03:52.328 +03:00 [INF] Request finished in 80.9045ms 200 application/javascript
+2020-10-15 20:03:52.335 +03:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\wwwroot\lib\jquery\dist\jquery.min.js'
+2020-10-15 20:03:52.339 +03:00 [INF] Request finished in 94.3937ms 200 application/javascript
+2020-10-15 20:03:52.481 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/favicon.ico  
+2020-10-15 20:03:52.494 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\wwwroot\favicon.ico'
+2020-10-15 20:03:52.497 +03:00 [INF] Request finished in 15.339ms 200 image/x-icon
+2020-10-15 20:03:55.037 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/Home/Privacy  
+2020-10-15 20:03:55.047 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:03:55.063 +03:00 [INF] Route matched with {action = "Privacy", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Privacy() on controller ProductPriceTracking.MvcUi.Controllers.HomeController (ProductPriceTracking.MvcUi).
+2020-10-15 20:03:55.073 +03:00 [INF] Start processing HTTP request GET "https://www.google.com.tr/"
+2020-10-15 20:03:55.077 +03:00 [INF] Sending HTTP request GET "https://www.google.com.tr/"
+2020-10-15 20:03:55.630 +03:00 [INF] Received HTTP response after 545.1109ms - "OK"
+2020-10-15 20:03:55.639 +03:00 [INF] End processing HTTP request after 566.9156ms - "OK"
+2020-10-15 20:03:55.927 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi) in 862.0314ms
+2020-10-15 20:03:55.932 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:03:55.939 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The character set provided in ContentType is invalid. Cannot read content as string using an invalid character set.
+ ---> System.ArgumentException: 'ISO-8859-9' is not a supported encoding name. For information on defining a custom encoding, see the documentation for the Encoding.RegisterProvider method. (Parameter 'name')
+   at System.Text.EncodingTable.InternalGetCodePageFromName(String name)
+   at System.Text.EncodingTable.GetCodePageFromName(String name)
+   at System.Text.Encoding.GetEncoding(String name)
+   at System.Net.Http.HttpContent.ReadBufferAsString(ArraySegment`1 buffer, HttpContentHeaders headers)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpContent.ReadBufferAsString(ArraySegment`1 buffer, HttpContentHeaders headers)
+   at System.Net.Http.HttpContent.ReadBufferedContentAsString()
+   at System.Net.Http.HttpContent.<>c.<ReadAsStringAsync>b__36_0(HttpContent s)
+   at System.Net.Http.HttpContent.WaitAndReturnAsync[TState,TResult](Task waitTask, TState state, Func`2 returnFunc)
+   at ProductPriceTracking.Bll.Concrete.HtmlLoaderManager.GetWebsiteContentByUrlAsync(String url) in C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.Bll\Concrete\HtmlLoaderManager.cs:line 30
+   at ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy() in C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\Controllers\HomeController.cs:line 32
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-10-15 20:03:56.215 +03:00 [INF] Request finished in 1178.575ms 500 text/html; charset=utf-8
+2020-10-15 20:04:32.578 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/Home/Privacy  
+2020-10-15 20:04:32.582 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:04:32.585 +03:00 [INF] Route matched with {action = "Privacy", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Privacy() on controller ProductPriceTracking.MvcUi.Controllers.HomeController (ProductPriceTracking.MvcUi).
+2020-10-15 20:04:43.321 +03:00 [INF] Start processing HTTP request GET "https://www.google.com.tr/"
+2020-10-15 20:04:43.325 +03:00 [INF] Sending HTTP request GET "https://www.google.com.tr/"
+2020-10-15 20:04:43.438 +03:00 [INF] Received HTTP response after 112.7093ms - "OK"
+2020-10-15 20:04:43.440 +03:00 [INF] End processing HTTP request after 119.3852ms - "OK"
+2020-10-15 20:04:48.714 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi) in 16126.4279ms
+2020-10-15 20:04:48.717 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:04:48.720 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The character set provided in ContentType is invalid. Cannot read content as string using an invalid character set.
+ ---> System.ArgumentException: 'ISO-8859-9' is not a supported encoding name. For information on defining a custom encoding, see the documentation for the Encoding.RegisterProvider method. (Parameter 'name')
+   at System.Text.EncodingTable.InternalGetCodePageFromName(String name)
+   at System.Text.EncodingTable.GetCodePageFromName(String name)
+   at System.Text.Encoding.GetEncoding(String name)
+   at System.Net.Http.HttpContent.ReadBufferAsString(ArraySegment`1 buffer, HttpContentHeaders headers)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpContent.ReadBufferAsString(ArraySegment`1 buffer, HttpContentHeaders headers)
+   at System.Net.Http.HttpContent.ReadBufferedContentAsString()
+   at System.Net.Http.HttpContent.<>c.<ReadAsStringAsync>b__36_0(HttpContent s)
+   at System.Net.Http.HttpContent.WaitAndReturnAsync[TState,TResult](Task waitTask, TState state, Func`2 returnFunc)
+   at ProductPriceTracking.Bll.Concrete.HtmlLoaderManager.GetWebsiteContentByUrlAsync(String url) in C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.Bll\Concrete\HtmlLoaderManager.cs:line 30
+   at ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy() in C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\Controllers\HomeController.cs:line 32
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-10-15 20:04:48.735 +03:00 [INF] Request finished in 16155.665ms 500 text/html; charset=utf-8
+2020-10-15 20:04:48.884 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/favicon.ico  
+2020-10-15 20:04:48.890 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\wwwroot\favicon.ico'
+2020-10-15 20:04:48.895 +03:00 [INF] Request finished in 10.9447ms 200 image/x-icon
+2020-10-15 20:05:30.355 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/Home/Privacy  
+2020-10-15 20:05:30.360 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:05:30.364 +03:00 [INF] Route matched with {action = "Privacy", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Privacy() on controller ProductPriceTracking.MvcUi.Controllers.HomeController (ProductPriceTracking.MvcUi).
+2020-10-15 20:05:37.586 +03:00 [INF] Start processing HTTP request GET "https://www.google.com.tr/"
+2020-10-15 20:05:37.589 +03:00 [INF] Sending HTTP request GET "https://www.google.com.tr/"
+2020-10-15 20:05:37.702 +03:00 [INF] Received HTTP response after 113.3078ms - "OK"
+2020-10-15 20:05:37.708 +03:00 [INF] End processing HTTP request after 122.3591ms - "OK"
+2020-10-15 20:06:11.175 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi) in 40808.0567ms
+2020-10-15 20:06:11.178 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:06:11.181 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The character set provided in ContentType is invalid. Cannot read content as string using an invalid character set.
+ ---> System.ArgumentException: 'ISO-8859-9' is not a supported encoding name. For information on defining a custom encoding, see the documentation for the Encoding.RegisterProvider method. (Parameter 'name')
+   at System.Text.EncodingTable.InternalGetCodePageFromName(String name)
+   at System.Text.EncodingTable.GetCodePageFromName(String name)
+   at System.Text.Encoding.GetEncoding(String name)
+   at System.Net.Http.HttpContent.ReadBufferAsString(ArraySegment`1 buffer, HttpContentHeaders headers)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpContent.ReadBufferAsString(ArraySegment`1 buffer, HttpContentHeaders headers)
+   at System.Net.Http.HttpContent.ReadBufferedContentAsString()
+   at System.Net.Http.HttpContent.<>c.<ReadAsStringAsync>b__36_0(HttpContent s)
+   at System.Net.Http.HttpContent.WaitAndReturnAsync[TState,TResult](Task waitTask, TState state, Func`2 returnFunc)
+   at ProductPriceTracking.Bll.Concrete.HtmlLoaderManager.GetWebsiteContentByUrlAsync(String url) in C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.Bll\Concrete\HtmlLoaderManager.cs:line 30
+   at ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy() in C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\Controllers\HomeController.cs:line 32
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-10-15 20:06:11.201 +03:00 [INF] Request finished in 40840.2763ms 500 text/html; charset=utf-8
+2020-10-15 20:06:11.402 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/favicon.ico  
+2020-10-15 20:06:11.413 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\wwwroot\favicon.ico'
+2020-10-15 20:06:11.418 +03:00 [INF] Request finished in 15.5446ms 200 image/x-icon
+2020-10-15 20:08:15.771 +03:00 [INF] Starting up
+2020-10-15 20:08:17.167 +03:00 [INF] User profile is available. Using 'C:\Users\recep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-10-15 20:08:17.611 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-10-15 20:08:17.621 +03:00 [INF] Hosting environment: Development
+2020-10-15 20:08:17.623 +03:00 [INF] Content root path: C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi
+2020-10-15 20:08:17.655 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/  
+2020-10-15 20:08:17.678 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi)'
+2020-10-15 20:08:17.727 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller ProductPriceTracking.MvcUi.Controllers.HomeController (ProductPriceTracking.MvcUi).
+2020-10-15 20:08:17.804 +03:00 [INF] Executing ViewResult, running view Index.
+2020-10-15 20:08:17.967 +03:00 [INF] Executed ViewResult - view Index executed in 194.7376ms.
+2020-10-15 20:08:17.971 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi) in 240.2897ms
+2020-10-15 20:08:17.975 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi)'
+2020-10-15 20:08:17.985 +03:00 [INF] Request finished in 333.0397ms 200 text/html; charset=utf-8
+2020-10-15 20:08:30.102 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/Home/Privacy  
+2020-10-15 20:08:30.109 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:08:30.124 +03:00 [INF] Route matched with {action = "Privacy", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Privacy() on controller ProductPriceTracking.MvcUi.Controllers.HomeController (ProductPriceTracking.MvcUi).
+2020-10-15 20:08:34.739 +03:00 [INF] Start processing HTTP request GET "https://www.google.com.tr/"
+2020-10-15 20:08:34.743 +03:00 [INF] Sending HTTP request GET "https://www.google.com.tr/"
+2020-10-15 20:08:35.180 +03:00 [INF] Received HTTP response after 432.1995ms - "OK"
+2020-10-15 20:08:35.184 +03:00 [INF] End processing HTTP request after 451.0959ms - "OK"
+2020-10-15 20:08:47.297 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi) in 17170.0803ms
+2020-10-15 20:08:47.301 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:08:47.309 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The character set provided in ContentType is invalid. Cannot read content as string using an invalid character set.
+ ---> System.ArgumentException: 'ISO-8859-9' is not a supported encoding name. For information on defining a custom encoding, see the documentation for the Encoding.RegisterProvider method. (Parameter 'name')
+   at System.Text.EncodingTable.InternalGetCodePageFromName(String name)
+   at System.Text.EncodingTable.GetCodePageFromName(String name)
+   at System.Text.Encoding.GetEncoding(String name)
+   at System.Net.Http.HttpContent.ReadBufferAsString(ArraySegment`1 buffer, HttpContentHeaders headers)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpContent.ReadBufferAsString(ArraySegment`1 buffer, HttpContentHeaders headers)
+   at System.Net.Http.HttpContent.ReadBufferedContentAsString()
+   at System.Net.Http.HttpContent.<>c.<ReadAsStringAsync>b__36_0(HttpContent s)
+   at System.Net.Http.HttpContent.WaitAndReturnAsync[TState,TResult](Task waitTask, TState state, Func`2 returnFunc)
+   at ProductPriceTracking.Bll.Concrete.HtmlLoaderManager.GetWebsiteContentByUrlAsync(String url) in C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.Bll\Concrete\HtmlLoaderManager.cs:line 30
+   at ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy() in C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\Controllers\HomeController.cs:line 32
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-10-15 20:08:47.479 +03:00 [INF] Request finished in 17377.4064ms 500 text/html; charset=utf-8
+2020-10-15 20:33:37.601 +03:00 [INF] Starting up
+2020-10-15 20:33:39.286 +03:00 [INF] User profile is available. Using 'C:\Users\recep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-10-15 20:33:39.945 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-10-15 20:33:39.948 +03:00 [INF] Hosting environment: Development
+2020-10-15 20:33:39.950 +03:00 [INF] Content root path: C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi
+2020-10-15 20:33:40.002 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/  
+2020-10-15 20:33:40.028 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi)'
+2020-10-15 20:33:40.093 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller ProductPriceTracking.MvcUi.Controllers.HomeController (ProductPriceTracking.MvcUi).
+2020-10-15 20:33:40.188 +03:00 [INF] Executing ViewResult, running view Index.
+2020-10-15 20:33:40.348 +03:00 [INF] Executed ViewResult - view Index executed in 197.9961ms.
+2020-10-15 20:33:40.353 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi) in 256.6604ms
+2020-10-15 20:33:40.356 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi)'
+2020-10-15 20:33:40.365 +03:00 [INF] Request finished in 367.6772ms 200 text/html; charset=utf-8
+2020-10-15 20:33:41.793 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/Home/Privacy  
+2020-10-15 20:33:41.799 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:33:41.813 +03:00 [INF] Route matched with {action = "Privacy", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Privacy() on controller ProductPriceTracking.MvcUi.Controllers.HomeController (ProductPriceTracking.MvcUi).
+2020-10-15 20:33:41.827 +03:00 [INF] Start processing HTTP request GET "https://www.google.com/"
+2020-10-15 20:33:41.832 +03:00 [INF] Sending HTTP request GET "https://www.google.com/"
+2020-10-15 20:33:42.312 +03:00 [INF] Received HTTP response after 474.7664ms - "OK"
+2020-10-15 20:33:42.316 +03:00 [INF] End processing HTTP request after 493.835ms - "OK"
+2020-10-15 20:33:42.355 +03:00 [INF] Executing ViewResult, running view Privacy.
+2020-10-15 20:33:42.371 +03:00 [INF] Executed ViewResult - view Privacy executed in 37.1449ms.
+2020-10-15 20:33:42.375 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi) in 558.2253ms
+2020-10-15 20:33:42.379 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:33:42.384 +03:00 [INF] Request finished in 591.6945ms 200 text/html; charset=utf-8
+2020-10-15 20:34:11.878 +03:00 [INF] Starting up
+2020-10-15 20:34:13.212 +03:00 [INF] User profile is available. Using 'C:\Users\recep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-10-15 20:34:13.713 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-10-15 20:34:13.716 +03:00 [INF] Hosting environment: Development
+2020-10-15 20:34:13.726 +03:00 [INF] Content root path: C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi
+2020-10-15 20:34:13.763 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/  
+2020-10-15 20:34:13.784 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi)'
+2020-10-15 20:34:13.852 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller ProductPriceTracking.MvcUi.Controllers.HomeController (ProductPriceTracking.MvcUi).
+2020-10-15 20:34:13.926 +03:00 [INF] Executing ViewResult, running view Index.
+2020-10-15 20:34:14.058 +03:00 [INF] Executed ViewResult - view Index executed in 166.7007ms.
+2020-10-15 20:34:14.063 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi) in 207.0163ms
+2020-10-15 20:34:14.067 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi)'
+2020-10-15 20:34:14.073 +03:00 [INF] Request finished in 314.2111ms 200 text/html; charset=utf-8
+2020-10-15 20:34:15.569 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/Home/Privacy  
+2020-10-15 20:34:15.576 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:34:15.590 +03:00 [INF] Route matched with {action = "Privacy", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Privacy() on controller ProductPriceTracking.MvcUi.Controllers.HomeController (ProductPriceTracking.MvcUi).
+2020-10-15 20:34:15.600 +03:00 [INF] Executing ViewResult, running view Privacy.
+2020-10-15 20:34:15.612 +03:00 [INF] Executed ViewResult - view Privacy executed in 16.0428ms.
+2020-10-15 20:34:15.619 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi) in 26.6179ms
+2020-10-15 20:34:15.622 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:34:15.625 +03:00 [INF] Request finished in 56.8591ms 200 text/html; charset=utf-8
+2020-10-15 20:34:29.361 +03:00 [INF] Starting up
+2020-10-15 20:34:30.611 +03:00 [INF] User profile is available. Using 'C:\Users\recep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-10-15 20:34:31.125 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-10-15 20:34:31.136 +03:00 [INF] Hosting environment: Development
+2020-10-15 20:34:31.138 +03:00 [INF] Content root path: C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi
+2020-10-15 20:34:31.170 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/  
+2020-10-15 20:34:31.194 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi)'
+2020-10-15 20:34:31.243 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller ProductPriceTracking.MvcUi.Controllers.HomeController (ProductPriceTracking.MvcUi).
+2020-10-15 20:34:31.320 +03:00 [INF] Executing ViewResult, running view Index.
+2020-10-15 20:34:31.442 +03:00 [INF] Executed ViewResult - view Index executed in 151.6029ms.
+2020-10-15 20:34:31.447 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi) in 200.6349ms
+2020-10-15 20:34:31.451 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi)'
+2020-10-15 20:34:31.460 +03:00 [INF] Request finished in 294.667ms 200 text/html; charset=utf-8
+2020-10-15 20:34:33.253 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/Home/Privacy  
+2020-10-15 20:34:33.259 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:34:33.274 +03:00 [INF] Route matched with {action = "Privacy", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Privacy() on controller ProductPriceTracking.MvcUi.Controllers.HomeController (ProductPriceTracking.MvcUi).
+2020-10-15 20:34:33.419 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi) in 141.3301ms
+2020-10-15 20:34:33.423 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:34:33.430 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetAsync(String requestUri)
+   at ProductPriceTracking.Bll.Concrete.HtmlLoaderManager.GetWebsiteContentByUrlAsync(String url) in C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.Bll\Concrete\HtmlLoaderManager.cs:line 26
+   at ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy() in C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\Controllers\HomeController.cs:line 32
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-10-15 20:34:33.681 +03:00 [INF] Request finished in 428.9472ms 500 text/html; charset=utf-8
+2020-10-15 20:38:01.367 +03:00 [INF] Starting up
+2020-10-15 20:38:02.857 +03:00 [INF] User profile is available. Using 'C:\Users\recep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-10-15 20:38:03.337 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-10-15 20:38:03.347 +03:00 [INF] Hosting environment: Development
+2020-10-15 20:38:03.349 +03:00 [INF] Content root path: C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi
+2020-10-15 20:38:03.384 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/  
+2020-10-15 20:38:03.408 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi)'
+2020-10-15 20:38:03.468 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller ProductPriceTracking.MvcUi.Controllers.HomeController (ProductPriceTracking.MvcUi).
+2020-10-15 20:38:03.541 +03:00 [INF] Executing ViewResult, running view Index.
+2020-10-15 20:38:03.734 +03:00 [INF] Executed ViewResult - view Index executed in 224.8074ms.
+2020-10-15 20:38:03.738 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi) in 267.6067ms
+2020-10-15 20:38:03.743 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi)'
+2020-10-15 20:38:03.752 +03:00 [INF] Request finished in 371.2331ms 200 text/html; charset=utf-8
+2020-10-15 20:38:16.545 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/Home/Privacy  
+2020-10-15 20:38:16.551 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:38:16.565 +03:00 [INF] Route matched with {action = "Privacy", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Privacy() on controller ProductPriceTracking.MvcUi.Controllers.HomeController (ProductPriceTracking.MvcUi).
+2020-10-15 20:38:16.634 +03:00 [INF] Executing ViewResult, running view Privacy.
+2020-10-15 20:38:16.648 +03:00 [INF] Executed ViewResult - view Privacy executed in 16.7547ms.
+2020-10-15 20:38:16.654 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi) in 86.0309ms
+2020-10-15 20:38:16.658 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:38:16.663 +03:00 [INF] Request finished in 118.1806ms 200 text/html; charset=utf-8
+2020-10-15 20:38:58.054 +03:00 [INF] Starting up
+2020-10-15 20:38:59.549 +03:00 [INF] User profile is available. Using 'C:\Users\recep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-10-15 20:39:00.126 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-10-15 20:39:00.133 +03:00 [INF] Hosting environment: Development
+2020-10-15 20:39:00.142 +03:00 [INF] Content root path: C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi
+2020-10-15 20:39:00.183 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/  
+2020-10-15 20:39:00.216 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi)'
+2020-10-15 20:39:00.272 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller ProductPriceTracking.MvcUi.Controllers.HomeController (ProductPriceTracking.MvcUi).
+2020-10-15 20:39:00.373 +03:00 [INF] Executing ViewResult, running view Index.
+2020-10-15 20:39:00.642 +03:00 [INF] Executed ViewResult - view Index executed in 312.1893ms.
+2020-10-15 20:39:00.647 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi) in 370.3953ms
+2020-10-15 20:39:00.651 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Index (ProductPriceTracking.MvcUi)'
+2020-10-15 20:39:00.666 +03:00 [INF] Request finished in 485.8196ms 200 text/html; charset=utf-8
+2020-10-15 20:42:28.731 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/Home/Privacy  
+2020-10-15 20:42:28.740 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:42:28.756 +03:00 [INF] Route matched with {action = "Privacy", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Privacy() on controller ProductPriceTracking.MvcUi.Controllers.HomeController (ProductPriceTracking.MvcUi).
+2020-10-15 20:42:28.783 +03:00 [INF] Start processing HTTP request GET "https://www.google.com/"
+2020-10-15 20:42:28.788 +03:00 [INF] Sending HTTP request GET "https://www.google.com/"
+2020-10-15 20:42:29.228 +03:00 [INF] Received HTTP response after 434.0841ms - "OK"
+2020-10-15 20:42:29.233 +03:00 [INF] End processing HTTP request after 454.5185ms - "OK"
+2020-10-15 20:42:29.261 +03:00 [INF] Executing ViewResult, running view Privacy.
+2020-10-15 20:42:29.279 +03:00 [INF] Executed ViewResult - view Privacy executed in 27.3368ms.
+2020-10-15 20:42:29.286 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi) in 528.1209ms
+2020-10-15 20:42:29.290 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.HomeController.Privacy (ProductPriceTracking.MvcUi)'
+2020-10-15 20:42:29.294 +03:00 [INF] Request finished in 567.3064ms 200 text/html; charset=utf-8

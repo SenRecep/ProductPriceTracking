@@ -1,0 +1,50 @@
+﻿@inject IAppUserSessionService userService
+@{
+    Layout = "_BaseLayout";
+    AppUserDto loginUser = userService.Get();
+}
+
+
+<div class="d-flex" id="wrapper">
+
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading text-center">
+            Yönetim Paneli
+            <h1>
+                <i class="fas fa-user-cog"></i>
+            </h1>
+            <h3>@loginUser.UserName</h3>
+            <h6>@loginUser.FullName</h6>
+        </div>
+        <div class="list-group list-group-flush">
+            <a asp-action="ProductList" asp-controller="Product" class="list-group-item list-group-item-action bg-light">Ürün Listesi</a>
+            <a asp-action="WebsiteList" asp-controller="Website" class="list-group-item list-group-item-action bg-light">Website Listesi</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Fiyat Konumları</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Kullanıcı Listesi</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Profili Düzenle</a>
+            <a asp-action="Logout" asp-controller="Auth" class="list-group-item list-group-item-action bg-light">Çıkış Yap</a>
+        </div>
+    </div>
+    <div id="page-content-wrapper">
+        <button class="btn btn-sm btn-info position-fixed rounded-0 ml-0" id="menu-toggle"><i class="fas fa-bars"></i></button>
+
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div>
+
+</div>
+
+
+
+@RenderSection("Modals", required: false)
+
+
+@section Scripts{
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+}

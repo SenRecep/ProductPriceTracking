@@ -1,0 +1,42 @@
+﻿@model AppUserAddFormDto
+@{
+    Layout = "_BaseLayout";
+    ViewData["Title"] = "SignUp";
+}
+
+<div class="screen-centered">
+    <form asp-action="SignUp" method="post" autocomplete="off">
+        <div asp-validation-summary="ModelOnly"> </div>
+        <div class="form-group">
+            <label>Kullanıcı Adı</label>
+            <input type="text" asp-for="UserName" class="form-control w-100" />
+            <span asp-validation-for="UserName"></span>
+        </div>
+        <div class="form-group">
+            <label>Ad ve Soyad</label>
+            <input type="text" asp-for="FullName" class="form-control w-100" />
+            <span asp-validation-for="FullName"></span>
+        </div>
+        <div class="form-group">
+            <label>Parola</label>
+            <input type="password" asp-for="Password" class="form-control w-100" />
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div class="form-group">
+            <label>Parola Tekrar</label>
+            <input type="password" asp-for="ConfirmPassword" class="form-control w-100" />
+            <span asp-validation-for="ConfirmPassword"></span>
+        </div>
+        <div class="form-group text-center">
+            <a class="btn btn-sm btn-info mr-1" asp-action="SignIn"><i class="fas fa-sign-in-alt"></i>  Giriş Yap</a>
+            <button class="btn btn-sm btn-success ml-1" type="submit">
+                <i class="fas fa-user-plus"></i> Kayıt Ol
+            </button>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

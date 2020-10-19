@@ -1,0 +1,33 @@
+﻿@model AppUserLoginDto
+@{
+    Layout = "_BaseLayout";
+    ViewData["Title"] = "SignIn";
+}
+
+<div class="screen-centered">
+    <form asp-action="SignIn" method="post" autocomplete="off">
+        <div class="form-group">
+            <label>Kullanıcı Adı</label>
+            <input type="text" asp-for="UserName" class="form-control w-100" />
+            <span asp-validation-for="UserName"></span>
+        </div>
+        <div class="form-group">
+            <label>Parola</label>
+            <input type="password" asp-for="Password" class="form-control w-100" />
+            <span asp-validation-for="Password"></span>
+
+        </div>
+        <div class="form-group text-center">
+            <a class="btn btn-sm btn-info mr-2" asp-action="SignUp"><i class="fas fa-user-plus"></i> Kayıt Ol</a>
+            <button class="btn btn-sm btn-success ml-2" type="submit">
+                <i class="fas fa-sign-in-alt"></i> Giriş Yap
+            </button>
+        </div>
+        <div asp-validation-summary="ModelOnly"> </div>
+    </form>
+</div>
+
+
+@section Scripts{ 
+    <partial name="_ValidationScriptsPartial" />
+}

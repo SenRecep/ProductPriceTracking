@@ -1,0 +1,11 @@
+﻿@inject IGenericService<Product> productService
+
+@{
+    ViewData["Title"] = "ProductList";
+}
+
+
+@foreach (var item in  await productService.GetAllAsync())
+{
+    <p>@item.Name</p>
+}
