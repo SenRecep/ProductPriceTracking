@@ -11,7 +11,7 @@ namespace ProductPriceTracking.Bll.Mapping.AutoMapperProfile
             CreateMap<AppUserAddDto, AppUser>();
             CreateMap<AppUser, AppUserAddDto>();
 
-            CreateMap<AppUserLoginDto, AppUser>(); 
+            CreateMap<AppUserLoginDto, AppUser>();
             CreateMap<AppUser, AppUserLoginDto>();
 
             CreateMap<AppUserAddFormDto, AppUser>();

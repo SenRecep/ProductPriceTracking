@@ -2,6 +2,7 @@
 using ProductPriceTracking.Bll.StringInfo;
 using ProductPriceTracking.Dto.AppUserDtos;
 using ProductPriceTracking.MvcUi.ExtensionMethods;
+using ProductPriceTracking.MvcUi.Services.Interfaces;
 
 namespace ProductPriceTracking.MvcUi.Services.Concrete
 {
@@ -26,7 +27,7 @@ namespace ProductPriceTracking.MvcUi.Services.Concrete
 
         public void Set(AppUserDto value)
         {
-            httpContextAccessor.HttpContext.Session.SetObj(SessionInfo.LoginUserSessionKey,value);
+            httpContextAccessor.HttpContext.Session.SetObj(SessionInfo.LoginUserSessionKey, value);
         }
     }
 }

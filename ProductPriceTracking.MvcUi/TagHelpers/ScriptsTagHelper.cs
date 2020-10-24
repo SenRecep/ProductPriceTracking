@@ -3,14 +3,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProductPriceTracking.MvcUi.TagHelpers
 {
     public class ScriptsTagHelper : TagHelper
     {
-        private static readonly object Itemskey = new Object();
+        private static readonly object Itemskey = new object();
 
         private IDictionary<object, object> Items => _httpContextAccessor?.HttpContext?.Items;
 
@@ -23,9 +22,9 @@ namespace ProductPriceTracking.MvcUi.TagHelpers
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            context.AllAttributes.TryGetAttribute("render", out var attribute);
+            context.AllAttributes.TryGetAttribute("render", out TagHelperAttribute attribute);
 
-            var render = false;
+            bool render = false;
 
             if (attribute != null)
             {
@@ -34,8 +33,8 @@ namespace ProductPriceTracking.MvcUi.TagHelpers
 
             if (render && Items.ContainsKey(Itemskey))
             {
-                var scripts = (List<HtmlString>)Items[Itemskey];
-                var outputContent = String.Concat(scripts);
+                List<HtmlString> scripts = (List<HtmlString>)Items[Itemskey];
+                string outputContent = string.Concat(scripts);
                 output.Content.SetHtmlContent(outputContent);
             }
             else
@@ -50,7 +49,7 @@ namespace ProductPriceTracking.MvcUi.TagHelpers
 
                 list = (List<HtmlString>)Items[Itemskey];
 
-                var outputContent = await output.GetChildContentAsync();
+                TagHelperContent outputContent = await output.GetChildContentAsync();
                 list.Add(new HtmlString(outputContent.GetContent()));
                 output.Content.Clear();
             }

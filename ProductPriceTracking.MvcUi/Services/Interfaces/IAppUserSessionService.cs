@@ -1,6 +1,6 @@
 ﻿using ProductPriceTracking.Dto.AppUserDtos;
 
-namespace ProductPriceTracking.MvcUi.Services.Concrete
+namespace ProductPriceTracking.MvcUi.Services.Interfaces
 {
     public interface IAppUserSessionService
     {

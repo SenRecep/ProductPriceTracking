@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using ProductPriceTracking.Bll.Containers.MicrosoftIOC;
 using ProductPriceTracking.MvcUi.Helpers;
 using ProductPriceTracking.MvcUi.Services.Concrete;
+using ProductPriceTracking.MvcUi.Services.Interfaces;
 using System;
 
 namespace ProductPriceTracking.MvcUi.Containers.MicrosoftIOC
@@ -24,18 +25,20 @@ namespace ProductPriceTracking.MvcUi.Containers.MicrosoftIOC
         public static void AddServicesDependencies(this IServiceCollection services)
         {
             services.AddDistributedMemoryCache();
-            services.AddSession(options => {
+            services.AddSession(options =>
+            {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
             });
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddScoped<IAppUserSessionService, AppUserSessionService>();
+            services.AddScoped<ISelectListService, SelectListService>();
         }
         public static void AddAttributeDependencies(this IServiceCollection services)
         {
 
         }
-       
+
         public static void AddHelperDependencies(this IServiceCollection services)
         {
             services.AddScoped<AccountHelper>();

@@ -2,7 +2,7 @@
 {
     public class ModalViewModel
     {
-        public ModalViewModel(string name,string submit)
+        public ModalViewModel(string name, string submit)
         {
             Name = name;
             Submit = submit;

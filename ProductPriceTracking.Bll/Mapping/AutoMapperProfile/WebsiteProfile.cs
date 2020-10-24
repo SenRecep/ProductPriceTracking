@@ -10,6 +10,9 @@ namespace ProductPriceTracking.Bll.Mapping.AutoMapperProfile
         {
             CreateMap<WebsiteAddDto, Website>();
             CreateMap<Website, WebsiteAddDto>();
+
+            CreateMap<WebsiteUpdateDto, Website>();
+            CreateMap<Website, WebsiteUpdateDto>();
         }
     }
 }

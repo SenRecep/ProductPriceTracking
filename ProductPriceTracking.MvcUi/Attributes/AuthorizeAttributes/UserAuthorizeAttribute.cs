@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 using ProductPriceTracking.Dto.AppUserDtos;
-using ProductPriceTracking.MvcUi.Services.Concrete;
+using ProductPriceTracking.MvcUi.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

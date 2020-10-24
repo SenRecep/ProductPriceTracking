@@ -1,0 +1,64 @@
+﻿@model WebsiteAddDto
+@{
+    ViewData["Title"] = "WebsiteAdd";
+}
+<h3 class="text-center mt-4">
+    Yeni Website Ekle
+</h3>
+<form asp-action="WebsiteAdd" asp-controller="Website" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="alert alert-warning" role="alert"></div>
+    <div class="form-group">
+        <label>Name</label>
+        <input class="form-control w-100" type="text" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label>Url</label>
+        <input class="form-control w-100" type="url" asp-for="BaseUrl" />
+        <span asp-validation-for="BaseUrl"></span>
+    </div>
+    <div class="form-group">
+        <label>Icon</label>
+        <div class="custom-file">
+            <label id="selectedFileName" class="custom-file-label">Dosya Seçilmedi</label>
+            <input type="file" class="custom-file-input" asp-for="Icon" />
+            <span asp-validation-for="Icon"></span>
+        </div>
+    </div>
+    <div id="imgPreview" class="form-group text-center " style="display:none;">
+        <img class="img-fluid  p-2 mx-auto" style="max-height:120px;border:1px solid #ced4da;box-sizing:border-box" />
+    </div>
+    <div class="form-group text-center">
+        <a class="btn btn-sm btn-info mr-2 " style="width:110px" asp-action="WebsiteList"><i class="fas fa-user-plus"></i> Geri Dön</a>
+        <button class="btn btn-sm btn-success ml-2 " style="width:110px" type="submit">
+            <i class="fas fa-sign-in-alt"></i> Ekle
+        </button>
+    </div>
+</form>
+
+<scripts>
+    <script>
+
+        $('#Icon').change(() => {
+            var file = $('#Icon').prop('files')[0];
+            var fileName = "Dosya Seçilmedi";
+            $('#imgPreview').hide();
+            if (file) {
+                fileName = file.name;
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imgPreview img').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(file);
+                $('#imgPreview').show();
+            }
+
+            $('#selectedFileName').text(fileName);
+        });
+    </script>
+    <partial name="_ValidationScriptsPartial" />
+</scripts>
+
+
+
+

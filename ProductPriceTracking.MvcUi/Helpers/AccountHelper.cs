@@ -11,7 +11,7 @@ namespace ProductPriceTracking.MvcUi.Helpers
         {
             return new AppUserDto()
             {
-                Id= appUser.Id,
+                Id = appUser.Id,
                 FullName = appUser?.FullName,
                 UserName = appUser?.UserName,
                 Roles = appRoles?.Select(x => x.Name).ToList()

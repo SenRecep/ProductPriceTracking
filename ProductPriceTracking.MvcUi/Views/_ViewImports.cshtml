@@ -1,13 +1,22 @@
-﻿@using ProductPriceTracking.MvcUi
-@using ProductPriceTracking.MvcUi.Models
-@using ProductPriceTracking.Dto.HtmlLoaderDtos
+﻿@using ProductPriceTracking.Dto.HtmlLoaderDtos
 @using ProductPriceTracking.Dto.AppUserDtos
-@using ProductPriceTracking.MvcUi.Services.Concrete
-@using ProductPriceTracking.Bll.Interfaces
-@using ProductPriceTracking.Entities.Concrete
-@using ProductPriceTracking.Bll.ExtensionMethods
-@using ProductPriceTracking.MvcUi.ViewComponents
+@using ProductPriceTracking.Dto.ProductDtos
 @using ProductPriceTracking.Dto.WebsiteDtos
+
+@using ProductPriceTracking.MvcUi
+@using ProductPriceTracking.MvcUi.Models
+@using ProductPriceTracking.MvcUi.Services.Concrete
+@using ProductPriceTracking.MvcUi.Services.Interfaces
+@using ProductPriceTracking.MvcUi.ViewComponents
 @using ProductPriceTracking.MvcUi.ExtensionMethods
+
+@using ProductPriceTracking.Bll.Interfaces
+@using ProductPriceTracking.Bll.ExtensionMethods
+@using ProductPriceTracking.Bll.StringInfo
+
+@using ProductPriceTracking.Entities.Concrete
+
+@using Microsoft.Extensions.Options
+
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @addTagHelper *, ProductPriceTracking.MvcUi

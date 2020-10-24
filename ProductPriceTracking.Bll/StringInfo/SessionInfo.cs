@@ -2,6 +2,6 @@
 {
     public class SessionInfo
     {
-        public const string LoginUserSessionKey = "loginUser"; 
+        public const string LoginUserSessionKey = "loginUser";
     }
 }

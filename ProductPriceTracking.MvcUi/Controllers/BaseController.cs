@@ -4,7 +4,7 @@ using ProductPriceTracking.MvcUi.Attributes.AuthorizeAttributes;
 
 namespace ProductPriceTracking.MvcUi.Controllers
 {
-    [UserAuthorize(RoleInfo.Admin,RoleInfo.Developer)]
+    [UserAuthorize(RoleInfo.Admin, RoleInfo.Developer)]
     public class BaseController : Controller
     {
     }

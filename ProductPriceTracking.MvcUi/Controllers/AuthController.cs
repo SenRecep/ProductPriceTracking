@@ -1,20 +1,17 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using ProductPriceTracking.Bll.Interfaces;
-using ProductPriceTracking.Entities.Concrete;
-using ProductPriceTracking.MvcUi.Services.Concrete;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using ProductPriceTracking.Bll.Helpers;
+using ProductPriceTracking.Bll.Interfaces;
+using ProductPriceTracking.Bll.StringInfo;
+using ProductPriceTracking.Dto.AppUserDtos;
+using ProductPriceTracking.Entities.Concrete;
+using ProductPriceTracking.MvcUi.Helpers;
+using ProductPriceTracking.MvcUi.Services.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using ProductPriceTracking.Dto.AppUserDtos;
-using ProductPriceTracking.Bll.Helpers;
-using ProductPriceTracking.MvcUi.Attributes.AuthorizeAttributes;
-using ProductPriceTracking.Bll.StringInfo;
-using ProductPriceTracking.MvcUi.Helpers;
-using ProductPriceTracking.Bll.ExtensionMethods;
 
 namespace ProductPriceTracking.MvcUi.Controllers
 {
@@ -28,7 +25,7 @@ namespace ProductPriceTracking.MvcUi.Controllers
         private readonly IAppRoleService appRoleService;
         private readonly ILogger<AuthController> logger;
         private readonly IAppUserSessionService appUserSessionService;
-        private readonly AccountHelper accountHelper; 
+        private readonly AccountHelper accountHelper;
         #endregion
 
         public AuthController(IServiceProvider serviceProvider)
@@ -121,7 +118,7 @@ namespace ProductPriceTracking.MvcUi.Controllers
                 ModelState.AddModelError("", "Lütfen gereken tüm alanları doldurunuz.");
                 return View(appUserAddDto);
             }
-        } 
+        }
         #endregion
 
         [HttpGet]

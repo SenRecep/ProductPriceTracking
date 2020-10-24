@@ -5,9 +5,9 @@ namespace ProductPriceTracking.Entities.Interfaces
 {
     public interface ITrackingRecord : IEntityBase
     {
-         string Name { get; set; }
-         string Url { get; set; }
-         int ProductId { get; set; }
-         Product Product { get; set; }
+        string Name { get; set; }
+        string Url { get; set; }
+        int ProductId { get; set; }
+        Product Product { get; set; }
     }
 }

@@ -1,73 +1,193 @@
 ﻿@inject IWebsiteService websiteService
+@inject IOptions<FolderInfo> folderInfo
 @{
     ViewData["Title"] = "WebsiteList";
+    var websites = await websiteService.GetWebsites();
+    var imagePath = folderInfo.Value.WebsiteIcons.Replace("\\", "/");
 }
 
 <div class="row">
-    <button type="button" class="btn btn-sm btn-primary w-100 rounded-0" data-toggle="modal" data-target="#websiteCreateModal">
+    <a class="btn btn-sm btn-primary w-100 rounded-0" asp-action="WebsiteAdd">
         <i class="fas fa-plus"></i>
-    </button>
-    <table class="table table-light table-striped table-hover table-bordered">
-        <thead>
-            <tr>
-                <th>Icon</th>
-                <th>URL</th>
-                <th>Ad</th>
-                <th>Ürün</th>
-                <th>Konum</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in await websiteService.GetWebsites())
-            {
+    </a>
+    <div class="table-responsive">
+        <table class="table table-light table-striped table-hover">
+            <thead>
                 <tr>
-                    <td class="py-2 text-center">
-                        @if (!item.IconName.EmptyCheck())
-                        {
-                            <img class="img-fluid " style="max-height:34px" src="~/UploadImages/WebsiteIcons/@item.IconName" asp-append-version="true" />
-                        }
-                    </td>
-                    <td>@item.BaseUrl</td>
-                    <td>@item.Name</td>
-                    <td>@item.Products?.Count()</td>
-                    <td>@item.PricePositions?.Count()</td>
+                    <th>Icon</th>
+                    <th>URL</th>
+                    <th>Ad</th>
+                    <th>Ürün</th>
+                    <th>Konum</th>
+                    <th>İşlem</th>
                 </tr>
-            }
+            </thead>
+            <tbody>
+                @foreach (var item in websites)
+                {
+                    <tr>
+                        <td class="py-2 text-center">
+                            @if (!item.IconName.EmptyCheck())
+                            {
+                                <img class="img-fluid " style="max-height:34px" src="~/@imagePath/@item.IconName" asp-append-version="true" />
+                            }
+                        </td>
+                        <td>@item.BaseUrl</td>
+                        <td>@item.Name</td>
+                        <td>@item.Products?.Count()</td>
+                        <td>@item.PricePositions?.Count()</td>
+                        <td>
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-danger btn-sm deleteBtn" data-toggle="modal" data-target="#websiteDeleteModal" data-websiteid="@item.Id"><i class="fas fa-trash-alt"></i></button>
+                                <button type="button" class="btn btn-info btn-sm mx-2 updateBtn" data-toggle="modal" data-target="#websiteUpdateModal"
+                                        data-websiteid="@item.Id"
+                                        data-baseurl="@item.BaseUrl"
+                                        data-name="@item.Name"
+                                        data-iconname="@item.IconName">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-sm addBtn" data-toggle="modal" data-target="#websiteAddModal" data-websiteid="@item.Id"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                }
 
-        </tbody>
-        <tfoot>
-            <tr>
-                <th>Icon</th>
-                <th>URL</th>
-                <th>Ad</th>
-                <th>Ürün</th>
-                <th>Konum</th>
-            </tr>
-        </tfoot>
-    </table>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Icon</th>
+                    <th>URL</th>
+                    <th>Ad</th>
+                    <th>Ürün</th>
+                    <th>Konum</th>
+                    <th>İşlem</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
 </div>
 
 
 
 @section Modals{
-    <div class="modal fade" id="websiteCreateModal" tabindex="-1" role="dialog" aria-labelledby="Website Create Modal" aria-hidden="true">
+    <div class="modal fade" id="websiteUpdateModal" tabindex="-1" role="dialog" aria-labelledby="Website Update Modal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Yeni Website</h5>
+                    <h5 class="modal-title">Website Güncelle</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    @await Component.InvokeAsync("WebsiteCreateForm", new ModalViewModel("websiteCreateModal", "wcmSubmitBtn"))
+                    @await Component.InvokeAsync(typeof(WebsiteUpdateFormViewComponent), new UpdateModalViewModel("websiteUpdateModal", "wumSubmitBtn", 0))
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Vazgeç</button>
-                    <button type="button" id="wcmSubmitBtn" class="btn btn-primary">Ekle</button>
+                    <button type="button" class="btn btn-primary" id="wumSubmitBtn">Guncelle</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="websiteDeleteModal" tabindex="-1" role="dialog" aria-labelledby="Website Delete Modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Website silinsin mi?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Website silinsin mi?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Vazgeç</button>
+                    <button type="button" class="btn btn-danger" id="deleteWebsiteModalBtn" data-websiteid="0">Sil</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="websiteAddModal" tabindex="-1" role="dialog" aria-labelledby="Website Delete Modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">İçerik Ekle</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Hangi ekleme işlemini yapmak istiyorsun</h5>
+                    <div class="form-group text-center mt-3">
+                        <a class="btn btn-sm btn-info mr-2" id="productAddBtn" asp-action="ProductAdd" asp-controller="Product" asp-route-websiteId="0">Ürün Ekle</a>
+                        <a class="btn btn-sm btn-success ml-2 " id="pricePositionAddBtn" asp-action="PricePositionAdd" asp-controller="PricePosition" asp-route-websiteId="0"><i class="fas fa-thumbtack"></i> Konum Ekle</a>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Vazgeç</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts{
+    <script>
+
+        $(document).ready(() => {
+
+            $('.deleteBtn').on("click", function () {
+                var id = $(this).data('websiteid');
+                $('#deleteWebsiteModalBtn').data('websiteid', id);
+            });
+
+            $('.addBtn').on("click", function () {
+                var id = $(this).data('websiteid');
+                var productaddBtnHref = $('#productAddBtn').attr('href').split('/');
+                var pricePositionAddBtnHref = $('#pricePositionAddBtn').attr('href').split('/');
+                productaddBtnHref[productaddBtnHref.length - 1] = id;
+                pricePositionAddBtnHref[pricePositionAddBtnHref.length - 1] = id;
+                $('#productAddBtn').attr('href', productaddBtnHref.join('/'));
+                $('#pricePositionAddBtn').attr('href', pricePositionAddBtnHref.join('/'));
+
+            })
+
+
+            $('.updateBtn').on("click", function () {
+                var website = {
+                    id : $(this).data('websiteid'),
+                    baseurl: $(this).data('baseurl'),
+                    name: $(this).data('name'),
+                    iconname: $(this).data('iconname')
+                }
+                $('#websiteUpdateModal #Id').val(website.id);
+                $('#websiteUpdateModal #Name').val(website.name);
+                $('#websiteUpdateModal #BaseUrl').val(website.baseurl);
+                if (website.iconname) {
+                    $('#websiteUpdateModal #imgIcon').attr("src", `/@imagePath/${website.iconname}`);
+                    $('#websiteUpdateModal #IconName').val(website.iconname);
+                }
+
+            })
+
+            $('#deleteWebsiteModalBtn').click((event) => {
+                var id = $(event.target).data('websiteid');
+                $.ajax({
+                    url: `@Url.Action("WebsiteDelete", "Website")?id=${id}`,
+                    type: "DELETE",
+                    contentType: "application/json; charset=utf-8"
+                }).done((response) => {
+                    $('#websiteDeleteModal').modal('hide');
+                    window.location.reload();
+                });
+            });
+        });
+    </script>
 }
 

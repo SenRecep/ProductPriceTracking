@@ -3,9 +3,7 @@ using ProductPriceTracking.Bll.Interfaces;
 using ProductPriceTracking.Dal.Interfaces;
 using ProductPriceTracking.Dto.AppUserDtos;
 using ProductPriceTracking.Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ProductPriceTracking.Bll.Concrete

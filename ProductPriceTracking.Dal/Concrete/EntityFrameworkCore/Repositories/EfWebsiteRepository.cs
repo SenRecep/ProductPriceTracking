@@ -2,10 +2,8 @@
 using ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Contexts;
 using ProductPriceTracking.Dal.Interfaces;
 using ProductPriceTracking.Entities.Concrete;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Repositories
@@ -21,7 +19,7 @@ namespace ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Repositories
         public async Task<ICollection<Website>> GetWebsites()
         {
             return await context.Websites
-                .Where(x=>!x.IsDeleted)
+                .Where(x => !x.IsDeleted)
                 .Include(x => x.Products).Include(x => x.PricePositions)
                 .ToListAsync();
         }

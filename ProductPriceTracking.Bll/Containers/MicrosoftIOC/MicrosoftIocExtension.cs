@@ -12,10 +12,8 @@ using ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Contexts;
 using ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Repositories;
 using ProductPriceTracking.Dal.Interfaces;
 using ProductPriceTracking.Dto.AppUserDtos;
+using ProductPriceTracking.Dto.ProductDtos;
 using ProductPriceTracking.Dto.WebsiteDtos;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ProductPriceTracking.Bll.Containers.MicrosoftIOC
 {
@@ -45,12 +43,13 @@ namespace ProductPriceTracking.Bll.Containers.MicrosoftIOC
             services.AddScoped<IWebsiteDal, EfWebsiteRepository>();
 
 
-            services.AddHttpClient<IHtmlLoaderService,HtmlLoaderManager>();
+            services.AddHttpClient<IHtmlLoaderService, HtmlLoaderManager>();
         }
         public static void AddMapperDependencies(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(AuthorizeProfile));
             services.AddAutoMapper(typeof(WebsiteProfile));
+            services.AddAutoMapper(typeof(ProductProfile));
         }
         public static void AddValidationDependencies(this IServiceCollection services)
         {
@@ -58,6 +57,8 @@ namespace ProductPriceTracking.Bll.Containers.MicrosoftIOC
             services.AddTransient<IValidator<AppUserAddDto>, AppUserAddDtoValidator>();
             services.AddTransient<IValidator<AppUserAddFormDto>, AppUserAddFormDtoValidator>();
             services.AddTransient<IValidator<WebsiteAddDto>, WebsiteAddDtoValidator>();
+            services.AddTransient<IValidator<WebsiteUpdateDto>, WebsiteUpdateDtoValidator>();
+            services.AddTransient<IValidator<ProductAddtDto>, ProductAddDtoValidator>();
         }
     }
 }

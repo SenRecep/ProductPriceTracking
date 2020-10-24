@@ -1,0 +1,90 @@
+﻿@model WebsiteUpdateDto
+@inject IOptions<FolderInfo> folderInfo
+@{
+    ModalViewModel modal = ViewBag.ModalModel;
+}
+
+<form id="websiteUpdateFormData" asp-action="WebsiteUpdate" asp-controller="Website" method="put" enctype="multipart/form-data">
+    <div id="websiteUpdateFormAlert" class="alert alert-warning" style="display:none" role="alert"></div>
+
+    <div class="form-group text-center">
+        <img id="imgIcon" class="img-fluid IconName" style="max-height:120px"  asp-append-version="true" />
+    </div>
+
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="IconName" />
+    <div class="form-group">
+        <label>Name</label>
+        <input class="form-control w-100 " type="text" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label>Url</label>
+        <input class="form-control w-100 " type="url" asp-for="BaseUrl" />
+        <span asp-validation-for="BaseUrl"></span>
+    </div>
+    <div class="form-group">
+        <label>Icon</label>
+        <div class="custom-file">
+            <label id="selectedFileName" class="custom-file-label">Dosya Seçilmedi</label>
+            <input type="file" class="custom-file-input" asp-for="Icon" />
+            <span asp-validation-for="Icon"></span>
+        </div>
+    </div>
+    <div id="imgPreview" class="form-group text-center " style="display:none;">
+        <img class="img-fluid  p-2 mx-auto" style="max-height:120px;border:1px solid #ced4da;box-sizing:border-box" />
+    </div>
+</form>
+
+<scripts>
+    <script>
+        $("#websiteUpdateFormData").submit(function (event) {
+            event.preventDefault();
+            var post_url = $(this).attr("action");
+            var request_method = $(this).attr("method");
+            var form_data = new FormData(this);
+            $.ajax({
+                url: post_url,
+                type: request_method,
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false
+            }).done(function (response) {
+                if (!response.isOk) {
+                    $('#websiteUpdateFormAlert').html(response.massage);
+                    $('#websiteUpdateFormAlert').show();
+                }
+                else {
+                    $('#@modal.Name').modal('hide');
+                    window.location.reload();
+                }
+            }).fail((err) => {
+                $('#websiteUpdateFormAlert').html("Hay Aksi! bir sorun ile karşılaştık daha sonra tekrar deneyiniz. sorunun tekrar etmesi halinde sistem yöneticisi ile iletişime geçin");
+                $('#websiteUpdateFormAlert').show();
+            });
+        });
+
+        $('#@modal.Submit').click(() => {
+            $("#websiteUpdateFormData").submit();
+        });
+        $('#Icon').change(() => {
+            var file = $('#Icon').prop('files')[0];
+            var fileName = "Dosya Seçilmedi";
+            $('#imgPreview').hide();
+            if (file) {
+                fileName = file.name;
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imgPreview img').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(file);
+                $('#imgPreview').show();
+            }
+
+            $('#selectedFileName').text(fileName);
+        });
+    </script>
+</scripts>
+
+

@@ -2,7 +2,7 @@
 
 namespace ProductPriceTracking.Dto.ProductDtos
 {
-    public class ProductDto:IDto
+    public class ProductAddtDto : IDto
     {
         public string Name { get; set; }
         public string Url { get; set; }

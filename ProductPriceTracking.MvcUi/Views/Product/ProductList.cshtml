@@ -1,11 +1,88 @@
-﻿@inject IGenericService<Product> productService
+﻿@inject IWebsiteService websiteService
 
 @{
     ViewData["Title"] = "ProductList";
+    var websites = (await websiteService.GetWebsites()).OrderByDescending(x => x.Products.Count()).ThenBy(x => x.Name).ToList();
 }
 
 
-@foreach (var item in  await productService.GetAllAsync())
-{
-    <p>@item.Name</p>
-}
+
+<div id="accordion">
+    @foreach (var website in websites)
+    {
+        <div class="card rounded-0 row mb-3">
+            <div class="card-header  d-flex justify-content-between align-items-center" id="ws-h-@website.Id">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#ws-b-@website.Id" aria-expanded="false" aria-controls="ws-b-@website.Id">
+                    @website.Name
+                </button>
+                <span><span class="text-primary">@website.Products.Count()</span> Adet Ürün Mevcut</span>
+            </div>
+
+            <div id="ws-b-@website.Id" class="collapse w-100 " aria-labelledby="ws-h-@website.Id" data-parent="#accordion">
+                <div class="card-body p-0">
+                    <a class="btn btn-sm btn-primary w-100 rounded-0" asp-action="ProductAdd" asp-controller="Product" asp-route-websiteId="@website.Id"> <i class="fas fa-plus"></i></a>
+                    @if (website.Products.Any())
+                    {
+                        <div class="table-responsive w-100">
+                            <table class="table table-light table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>URL</th>
+                                        <th>Ad</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var product in website.Products)
+                                    {
+                                        <tr>
+                                            <td class="align-middle text-truncate">
+                                                @{
+                                                    string value = string.Concat(product.Url.Replace(website.BaseUrl, "").Take(50));
+                                                }
+                                                @value
+                                                @if (product.Url.Length > value.Length)
+                                                {
+                                                    <button class="btn btn-link" data-value="@product.Url" data-toggle="modal" data-target="#detailModal" style="box-shadow:none">...</button>
+                                                }
+                                            </td>
+                                            <td class="align-middle text-truncate">@product.Name</td>
+                                            <td class="align-middle">
+                                                <div class="d-flex justify-content-center">
+                                                    <button type="button" class="btn btn-danger btn-sm deleteBtn"><i class="fas fa-trash-alt"></i></button>
+                                                    <button type="button" class="btn btn-info btn-sm mx-2 updateBtn">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>URL</th>
+                                        <th>Ad</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <p>Listelenecek Ürün Yok</p>
+                    }
+
+                </div>
+                <div class="card-footer text-center">
+                    <a href="@website.BaseUrl">@website.BaseUrl</a>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="row">
+        <a class="btn btn-sm btn-primary w-100 rounded-0" asp-action="WebsiteAdd" asp-controller="Website"> <i class="fas fa-plus"></i></a>
+    </div>
+</div>
+
