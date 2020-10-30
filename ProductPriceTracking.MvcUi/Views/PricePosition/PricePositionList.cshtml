@@ -1,7 +1,164 @@
-﻿
+﻿@inject IWebsiteService websiteService
+
 @{
-    ViewData["Title"] = "PricePositionList";
+    ViewData["Title"] = "ProductList";
+    var websites = (await websiteService.GetWebsites()).OrderByDescending(x=>x.PricePositions.Count());
 }
 
-<h1>PricePositionList</h1>
 
+
+<div id="accordion">
+    @foreach (var website in websites)
+    {
+        <div class="card rounded-0 row mb-3">
+            <div class="card-header  d-flex justify-content-between align-items-center" id="ws-h-@website.Id">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#ws-b-@website.Id" aria-expanded="false" aria-controls="ws-b-@website.Id">
+                    @website.Name
+                </button>
+                <span><span class="text-primary">@website.PricePositions.Count()</span> Adet Para Konumu Mevcut</span>
+            </div>
+
+            <div id="ws-b-@website.Id" class="collapse w-100 " aria-labelledby="ws-h-@website.Id" data-parent="#accordion">
+                <div class="card-body p-0">
+                    <a class="btn btn-sm btn-primary w-100 rounded-0" asp-action="PricePositionAdd" asp-controller="PricePosition" asp-route-websiteId="@website.Id"> <i class="fas fa-plus"></i></a>
+                    @if (website.PricePositions.Any())
+                    {
+                        <div class="table-responsive w-100">
+                            <table class="table table-light table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>XPATH</th>
+                                        <th>Öncelik</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var pricePosition in website.PricePositions)
+                                    {
+                                        <tr>
+                                            <td class="align-middle text-truncate">
+                                                @{
+                                                    string value = string.Concat(pricePosition.XPath.TakeLast(50));
+                                                }
+                                                @value
+                                                @if (pricePosition.XPath.Length > value.Length)
+                                                {
+                                                    <button class="btn btn-link" data-value="@pricePosition.XPath" data-toggle="modal" data-target="#detailModal" style="box-shadow:none">...</button>
+                                                }
+                                            </td>
+                                            <td class="align-middle text-truncate">@pricePosition.Priority</td>
+                                            <td class="align-middle">
+                                                <div class="d-flex justify-content-center">
+                                                    <button type="button" class="btn btn-danger btn-sm deleteBtn" data-toggle="modal" data-target="#pricePositionDeleteModal" data-pricepozitonid="@pricePosition.Id"><i class="fas fa-trash-alt"></i></button>
+                                                    <button type="button" class="btn btn-info btn-sm mx-2 updateBtn" data-toggle="modal" data-target="#pricePositionUpdateModal"
+                                                            data-id="@pricePosition.Id"
+                                                            data-websiteid="@pricePosition.WebsiteId"
+                                                            data-xpath="@pricePosition.XPath"
+                                                            data-priority="@pricePosition.Priority">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>XPATH</th>
+                                        <th>Öncelik</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="mt-3">Listelenecek Para Konumu Yok</p>
+                    }
+
+                </div>
+                <div class="card-footer text-center">
+                    <a href="@website.BaseUrl">@website.BaseUrl</a>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="row">
+        <a class="btn btn-sm btn-primary w-100 rounded-0" asp-action="WebsiteAdd" asp-controller="Website"> <i class="fas fa-plus"></i></a>
+    </div>
+</div>
+
+@section Modals{
+    <div class="modal fade" id="pricePositionDeleteModal" tabindex="-1" role="dialog" aria-labelledby="Price Position Delete Modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ürün konumu silinsin mi?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Ürün konumu silinsin mi?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Vazgeç</button>
+                    <button type="button" class="btn btn-danger" id="pricePozitionModalBtn" data-pricepozitonid="0">Sil</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="pricePositionUpdateModal" tabindex="-1" role="dialog" aria-labelledby="Price Position Update Modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Product Güncelle</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @await Component.InvokeAsync(typeof(PricePositionUpdateFormViewComponent), new UpdateModalViewModel("pricePositionUpdateModal", "ppumSubmitBtn", 0))
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Vazgeç</button>
+                    <button type="button" class="btn btn-primary" id="ppumSubmitBtn">Guncelle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts{
+    <script>
+        $('.deleteBtn').on("click", function () {
+            var id = $(this).data('pricepozitonid');
+            $('#pricePozitionModalBtn').data('pricepozitonid', id);
+        });
+        $('#pricePozitionModalBtn').click(function () {
+            var id = $(event.target).data('pricepozitonid');
+            $.ajax({
+                url: `@Url.Action("PricePositionDelete", "PricePosition")?id=${id}`,
+                type: "DELETE",
+                contentType: "application/json; charset=utf-8"
+            }).done((response) => {
+                $('#pricePositionDeleteModal').modal('hide');
+                window.location.reload();
+            });
+        });
+        $('.updateBtn').on("click", function () {
+            var pricePozition = {
+                id: $(this).data('id'),
+                xpath: $(this).data('xpath'),
+                priority: $(this).data('priority'),
+                websiteid: $(this).data('websiteid')
+            }
+            $('#pricePositionUpdateModal #Id').val(pricePozition.id);
+            $('#pricePositionUpdateModal #XPath').val(pricePozition.xpath);
+            $('#pricePositionUpdateModal #Priority').val(pricePozition.priority);
+            $('#pricePositionUpdateModal #WebsiteId').val(pricePozition.websiteid);
+        });
+    </script>
+}

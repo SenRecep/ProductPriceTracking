@@ -1,7 +1,46 @@
-﻿
+﻿@inject ISelectListService selectListService
+@model PricePositionAddDto
 @{
     ViewData["Title"] = "PricePositionAdd";
 }
+<h3 class="text-center mt-4">
+    Yeni Ürün Ekle
+</h3>
+<form asp-action="PricePositionAdd" method="post">
+    <div asp-validation-summary="ModelOnly" class="alert alert-warning" role="alert"></div>
+    <div class="form-group">
+        <label>Website</label>
+        <select class="form-control w-100 custom-select" asp-for="WebsiteId" asp-items="await selectListService.GetWebsites()">
+            <option value="0">Bir Website Seçiniz</option>
+        </select>
+        <span asp-validation-for="WebsiteId"></span>
+    </div>
+    <div class="form-group">
+        <label>XPath</label>
+        <input class="form-control w-100" type="text" asp-for="XPath" />
+        <span asp-validation-for="XPath"></span>
+    </div>
+    <div class="form-group">
+        <label>Öncelik</label>
+        <input class="form-control w-100" type="number" asp-for="Priority" />
+        <span asp-validation-for="Priority"></span>
+    </div>
+    <div class="form-group text-center">
+        <a class="btn btn-sm btn-info mr-2 " style="width:110px" asp-action="PricePositionList"><i class="fas fa-user-plus"></i> Liste</a>
+        <button class="btn btn-sm btn-success ml-2 " style="width:110px" type="submit">
+            <i class="fas fa-sign-in-alt"></i> Ekle
+        </button>
+    </div>
+</form>
 
-<h1>PricePositionAdd</h1>
+
+@section Scripts{
+
+    <script>
+        if (@Model.WebsiteId > 0) {
+            $('#WebsiteId').prop("disabled", true);
+        }
+    </script>
+    <partial name="_ValidationScriptsPartial" />
+}
 

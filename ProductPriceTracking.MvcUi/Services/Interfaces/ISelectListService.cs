@@ -7,5 +7,6 @@ namespace ProductPriceTracking.MvcUi.Services.Interfaces
     public interface ISelectListService
     {
         Task<IEnumerable<SelectListItem>> GetWebsites();
+        Task<IEnumerable<SelectListItem>> GetProducts();
     }
 }

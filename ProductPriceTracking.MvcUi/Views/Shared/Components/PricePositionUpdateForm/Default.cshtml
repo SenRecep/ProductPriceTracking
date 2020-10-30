@@ -1,0 +1,65 @@
+﻿@inject ISelectListService selectListService
+@model PricePositionUpdateDto
+@{
+    ModalViewModel modal = ViewBag.ModalModel;
+}
+
+<form id="pricePozitionUpdateFormData" asp-action="PricePositionUpdate" asp-controller="PricePosition" method="put">
+    <div id="pricePozitionUpdateFormAlert" class="alert alert-warning" style="display:none" role="alert"></div>
+
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label>Website</label>
+        <select class="form-control w-100" asp-for="WebsiteId" asp-items="await selectListService.GetWebsites()">
+            <option value="0">Bir Website Seçiniz</option>
+        </select>
+        <span asp-validation-for="WebsiteId"></span>
+    </div>
+    <div class="form-group">
+        <label>XPath</label>
+        <input class="form-control w-100" type="text" asp-for="XPath" />
+        <span asp-validation-for="XPath"></span>
+    </div>
+    <div class="form-group">
+        <label>Öncelik</label>
+        <input class="form-control w-100" type="number" asp-for="Priority" />
+        <span asp-validation-for="Priority"></span>
+    </div>
+</form>
+
+<scripts>
+    <script>
+        $("#pricePozitionUpdateFormData").submit(function (event) {
+            event.preventDefault();
+            var post_url = $(this).attr("action");
+            var request_method = $(this).attr("method");
+            var form_data = new FormData(this);
+            $.ajax({
+                url: post_url,
+                type: request_method,
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false
+            }).done(function (response) {
+                if (!response.isOk) {
+                    $('#pricePozitionUpdateFormAlert').html(response.massage);
+                    $('#pricePozitionUpdateFormAlert').show();
+                }
+                else {
+                    $('#@modal.Name').modal('hide');
+                    window.location.reload();
+                }
+            }).fail((err) => {
+                $('#pricePozitionUpdateFormAlert').html("Hay Aksi! bir sorun ile karşılaştık daha sonra tekrar deneyiniz. sorunun tekrar etmesi halinde sistem yöneticisi ile iletişime geçin");
+                $('#pricePozitionUpdateFormAlert').show();
+            });
+        });
+
+        $('#@modal.Submit').click(() => {
+            $("#pricePozitionUpdateFormData").submit();
+        });
+    </script>
+</scripts>
+
+

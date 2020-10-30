@@ -8,8 +8,11 @@ namespace ProductPriceTracking.Bll.Mapping.AutoMapperProfile
     {
         public ProductProfile()
         {
-            CreateMap<Product, ProductAddtDto>();
-            CreateMap<ProductAddtDto, Product>();
+            CreateMap<Product, ProductAddDto>();
+            CreateMap<ProductAddDto, Product>();
+
+            CreateMap<Product, ProductUpdateDto>();
+            CreateMap<ProductUpdateDto, Product>();
         }
     }
 }

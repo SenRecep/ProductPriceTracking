@@ -2,7 +2,7 @@
 
 namespace ProductPriceTracking.Dto.PricePositionDtos
 {
-    public class PricePositionDto : IDto
+    public class PricePositionAddDto : IDto
     {
         public string XPath { get; set; }
         public int Priority { get; set; }

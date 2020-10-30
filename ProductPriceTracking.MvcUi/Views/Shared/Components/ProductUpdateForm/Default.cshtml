@@ -1,0 +1,66 @@
+﻿@inject ISelectListService selectListService
+@model ProductUpdateDto
+@{
+    ModalViewModel modal = ViewBag.ModalModel;
+}
+
+<form id="productUpdateFormData" asp-action="ProductUpdate" asp-controller="Product" method="put">
+    <div id="productUpdateFormAlert" class="alert alert-warning" style="display:none" role="alert"></div>
+
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label>Website</label>
+        <select class="form-control w-100" asp-for="WebsiteId" asp-items="await selectListService.GetWebsites()">
+            <option value="0">Bir Website Seçiniz</option>
+        </select>
+        <span asp-validation-for="WebsiteId"></span>
+    </div>
+    <div class="form-group">
+        <label>Name</label>
+        <input class="form-control w-100 " type="text" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label>Url</label>
+        <input class="form-control w-100 " type="url" asp-for="Url" />
+        <span asp-validation-for="Url"></span>
+    </div>
+
+</form>
+
+<scripts>
+    <script>
+        $("#productUpdateFormData").submit(function (event) {
+            event.preventDefault();
+            var post_url = $(this).attr("action");
+            var request_method = $(this).attr("method");
+            var form_data = new FormData(this);
+            $.ajax({
+                url: post_url,
+                type: request_method,
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false
+            }).done(function (response) {
+                if (!response.isOk) {
+                    $('#productUpdateFormAlert').html(response.massage);
+                    $('#productUpdateFormAlert').show();
+                }
+                else {
+                    $('#@modal.Name').modal('hide');
+                    window.location.reload();
+                }
+            }).fail((err) => {
+                $('#productUpdateFormAlert').html("Hay Aksi! bir sorun ile karşılaştık daha sonra tekrar deneyiniz. sorunun tekrar etmesi halinde sistem yöneticisi ile iletişime geçin");
+                $('#productUpdateFormAlert').show();
+            });
+        });
+
+        $('#@modal.Submit').click(() => {
+            $("#productUpdateFormData").submit();
+        });
+    </script>
+</scripts>
+
+

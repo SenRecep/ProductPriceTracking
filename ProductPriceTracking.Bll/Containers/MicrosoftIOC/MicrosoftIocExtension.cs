@@ -58,7 +58,8 @@ namespace ProductPriceTracking.Bll.Containers.MicrosoftIOC
             services.AddTransient<IValidator<AppUserAddFormDto>, AppUserAddFormDtoValidator>();
             services.AddTransient<IValidator<WebsiteAddDto>, WebsiteAddDtoValidator>();
             services.AddTransient<IValidator<WebsiteUpdateDto>, WebsiteUpdateDtoValidator>();
-            services.AddTransient<IValidator<ProductAddtDto>, ProductAddDtoValidator>();
+            services.AddTransient<IValidator<ProductAddDto>, ProductAddDtoValidator>();
+            services.AddTransient<IValidator<ProductUpdateDto>, ProductUpdateDtoValidator>();
         }
     }
 }

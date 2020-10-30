@@ -2,8 +2,9 @@
 
 namespace ProductPriceTracking.Dto.ProductDtos
 {
-    public class ProductAddtDto : IDto
+    public class ProductUpdateDto : IDto
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }
         public int WebsiteId { get; set; }

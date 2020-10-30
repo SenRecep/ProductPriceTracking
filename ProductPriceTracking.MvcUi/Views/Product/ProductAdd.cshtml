@@ -1,5 +1,5 @@
 ﻿@inject ISelectListService selectListService
-@model ProductAddtDto
+@model ProductAddDto
 @{
     ViewData["Title"] = "ProductAdd";
 }
@@ -10,7 +10,7 @@
     <div asp-validation-summary="ModelOnly" class="alert alert-warning" role="alert"></div>
     <div class="form-group">
         <label>Website</label>
-        <select class="form-control w-100" asp-for="WebsiteId" asp-items="await selectListService.GetWebsites()">
+        <select class="form-control w-100 custom-select " asp-for="WebsiteId" asp-items="await selectListService.GetWebsites()">
             <option value="0">Bir Website Seçiniz</option>
         </select>
         <span asp-validation-for="WebsiteId"></span>
@@ -35,6 +35,11 @@
 
 
 @section Scripts{
+    <script>
+        if (@Model.WebsiteId > 0) {
+            $('#WebsiteId').prop("disabled", true);
+        }
+    </script> 
     <partial name="_ValidationScriptsPartial" />
 }
 
