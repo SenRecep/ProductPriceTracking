@@ -13,6 +13,9 @@ namespace ProductPriceTracking.Bll.Mapping.AutoMapperProfile
 
             CreateMap<Product, ProductUpdateDto>();
             CreateMap<ProductUpdateDto, Product>();
+
+            CreateMap<Product, ProductDto>();
+            CreateMap<ProductDto, Product>();
         }
     }
 }

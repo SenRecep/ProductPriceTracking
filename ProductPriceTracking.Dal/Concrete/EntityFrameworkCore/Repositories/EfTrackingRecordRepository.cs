@@ -2,7 +2,6 @@
 using ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Contexts;
 using ProductPriceTracking.Dal.Interfaces;
 using ProductPriceTracking.Entities.Concrete;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Repositories
@@ -20,7 +19,7 @@ namespace ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Repositories
         {
             return await context.Products
                 .Include(x => x.TrackingRecords).Include(x => x.Website)
-                .FirstOrDefaultAsync(x => !x.IsDeleted && x.Id == productId); 
+                .FirstOrDefaultAsync(x => !x.IsDeleted && x.Id == productId);
         }
     }
 }

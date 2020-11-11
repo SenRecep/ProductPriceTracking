@@ -17,11 +17,18 @@ namespace ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Mapping
 
             builder.HasMany(x => x.PricePositions)
                 .WithOne(x => x.Website)
-                .HasForeignKey(x => x.WebsiteId);
+                .HasForeignKey(x => x.WebsiteId)
+                .OnDelete( DeleteBehavior.Cascade);
 
             builder.HasMany(x => x.Products)
                .WithOne(x => x.Website)
-               .HasForeignKey(x => x.WebsiteId);
+               .HasForeignKey(x => x.WebsiteId)
+               .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasMany(x => x.TrackingRecords)
+               .WithOne(x => x.Website)
+               .HasForeignKey(x => x.WebsiteId)
+               .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

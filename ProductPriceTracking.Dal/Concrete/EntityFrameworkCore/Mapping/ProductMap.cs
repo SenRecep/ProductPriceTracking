@@ -15,7 +15,8 @@ namespace ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Mapping
 
             builder.HasMany(x => x.TrackingRecords)
                 .WithOne(x => x.Product)
-                .HasForeignKey(x => x.ProductId);
+                .HasForeignKey(x => x.ProductId)
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

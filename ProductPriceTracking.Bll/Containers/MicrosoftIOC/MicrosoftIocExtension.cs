@@ -38,9 +38,11 @@ namespace ProductPriceTracking.Bll.Containers.MicrosoftIOC
             services.AddScoped<IAppRoleService, AppRoleManager>();
             services.AddScoped<IUserRoleService, UserRoleManager>();
             services.AddScoped<IWebsiteService, WebsiteManager>();
+            services.AddScoped<ITrackingRecordService, TrackingRecordManager>();
 
             services.AddScoped<IAppUserDal, EfAppUserRepository>();
             services.AddScoped<IWebsiteDal, EfWebsiteRepository>();
+            services.AddScoped<ITrackingRecordDal, EfTrackingRecordRepository>();
 
 
             services.AddHttpClient<IHtmlLoaderService, HtmlLoaderManager>();

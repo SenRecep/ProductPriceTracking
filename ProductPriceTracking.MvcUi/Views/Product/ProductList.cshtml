@@ -24,7 +24,7 @@
                     @if (website.Products.Any())
                     {
                         <div class="table-responsive w-100">
-                            <table class="table table-light table-striped table-hover">
+                            <table class="table table-light table-striped table-hover mb-0">
                                 <thead>
                                     <tr>
                                         <th>URL</th>
@@ -57,7 +57,7 @@
                                                             data-id="@product.Id">
                                                         <i class="fas fa-edit"></i>
                                                     </button>
-                                                    <a class="btn btn-primary btn-sm" asp-action="PricePositionList" asp-controller="PricePosition"><i class="fas fa-plus"></i></a>
+                                                    <a class="btn btn-primary btn-sm" asp-route-productId="@product.Id"  asp-action="TrackingRecordList" asp-controller="TrackingRecord"><i class="fas fa-list"></i></a>
                                                 </div>
                                             </td>
                                         </tr>

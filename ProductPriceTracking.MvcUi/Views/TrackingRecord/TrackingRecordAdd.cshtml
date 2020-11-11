@@ -1,0 +1,45 @@
+﻿@inject ISelectListService selectListService
+@model TrackingRecordAddDto
+@{
+    ViewData["Title"] = "TrackingRecordAdd";
+}
+<h3 class="text-center mt-4">
+    Yeni Ürün Takipçisi Ekle
+</h3>
+<form asp-action="TrackingRecordAdd" method="post">
+    <div asp-validation-summary="ModelOnly" class="alert alert-warning" role="alert"></div>
+    <div class="form-group">
+        <label>Website</label>
+        <select class="form-control w-100 custom-select " asp-for="ProductId" asp-items="await selectListService.GetProducts()">
+            <option value="0">Bir Ürün Seçiniz</option>
+        </select>
+        <span asp-validation-for="ProductId"></span>
+    </div>
+    <div class="form-group">
+        <label>Ad</label>
+        <input class="form-control w-100" type="text" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label>Url</label>
+        <input class="form-control w-100" type="url" asp-for="Url" />
+        <span asp-validation-for="Url"></span>
+    </div>
+    <div class="form-group text-center">
+        <a class="btn btn-sm btn-info mr-2 " style="width:110px" asp-action="TrackingRecordList"><i class="fas fa-user-plus"></i> Liste</a>
+        <button class="btn btn-sm btn-success ml-2 " style="width:110px" type="submit">
+            <i class="fas fa-sign-in-alt"></i> Ekle
+        </button>
+    </div>
+</form>
+
+
+@section Scripts{
+    <script>
+        if (@Model.ProductId > 0) {
+            $('#ProductId').prop("disabled", true);
+        }
+    </script>
+    <partial name="_ValidationScriptsPartial" />
+}
+

@@ -9,5 +9,7 @@ namespace ProductPriceTracking.Entities.Interfaces
         string Url { get; set; }
         int ProductId { get; set; }
         Product Product { get; set; }
+        int WebsiteId { get; set; }
+        Website Website { get; set; }
     }
 }

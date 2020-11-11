@@ -1,7 +1,5 @@
-﻿using Microsoft.VisualBasic.CompilerServices;
-using ProductPriceTracking.Core.Entities.Interfaces;
+﻿using ProductPriceTracking.Core.Entities.Interfaces;
 using System;
-using System.Runtime.CompilerServices;
 
 namespace ProductPriceTracking.Core.Entities.Concrete
 {

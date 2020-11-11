@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using ProductPriceTracking.Bll.ExtensionMethods;
 using ProductPriceTracking.Bll.Interfaces;
+using ProductPriceTracking.Dto.ProductDtos;
 using ProductPriceTracking.Dto.TrackingRecordDtos;
 using ProductPriceTracking.Entities.Concrete;
 using ProductPriceTracking.MvcUi.ExtensionMethods;
 using ProductPriceTracking.MvcUi.Services.Interfaces;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 
@@ -18,18 +18,24 @@ namespace ProductPriceTracking.MvcUi.Controllers
     {
         private readonly IMapper mapper;
         private readonly IAppUserSessionService appUserSessionService;
-        private readonly IGenericService<TrackingRecord> trackingRecordService;
+        private readonly IGenericService<TrackingRecord> trackingRecordGenericService;
+        private readonly ITrackingRecordService trackingRecordService;
         public TrackingRecordController(IServiceProvider serviceProvider)
         {
             mapper = serviceProvider.GetService<IMapper>();
             appUserSessionService = serviceProvider.GetService<IAppUserSessionService>();
-            trackingRecordService = serviceProvider.GetService<IGenericService<TrackingRecord>>();
+            trackingRecordService = serviceProvider.GetService<ITrackingRecordService>();
+            trackingRecordGenericService = serviceProvider.GetService<IGenericService<TrackingRecord>>();
         }
         [HttpGet]
-        [Route("Takipci-Listesi/{productId:int}")]
+        [Route("Takipci-Listesi/{productId}")]
         public async Task<IActionResult> TrackingRecordList(int productId)
         {
-            return View();
+            Product found = await trackingRecordService.GetLoadedProductById(productId);
+            var model = mapper.Map<ProductDto>(found);
+            if (model.IsNull())
+                return NotFoundPage("Ürün Bulunamadı", "Lütfen doğru ürün bilgisi ile işlem yapın");
+            return View(model);
         }
 
         [HttpGet]
@@ -48,8 +54,8 @@ namespace ProductPriceTracking.MvcUi.Controllers
             {
                 TrackingRecord trackingRecord = mapper.Map<TrackingRecord>(model);
                 trackingRecord.CreateUserId = appUserSessionService.Get().Id;
-                await trackingRecordService.AddAsync(trackingRecord);
-                return RedirectToAction("TrackingRecordList");
+                await trackingRecordGenericService.AddAsync(trackingRecord);
+                return RedirectToAction("TrackingRecordList", new { productId = model.ProductId });
             }
             else
             {
@@ -60,9 +66,9 @@ namespace ProductPriceTracking.MvcUi.Controllers
         [HttpDelete]
         public async Task<IActionResult> TrackingRecordDelete(int id)
         {
-            TrackingRecord found = await trackingRecordService.GetByIdAsync(id);
+            TrackingRecord found = await trackingRecordGenericService.GetByIdAsync(id);
             if (found != null)
-                await trackingRecordService.RemoveAsync(found);
+                await trackingRecordGenericService.RemoveAsync(found);
             return Json($"{id} id li ürün silindi");
         }
         [HttpPut]
@@ -70,12 +76,12 @@ namespace ProductPriceTracking.MvcUi.Controllers
         {
             if (ModelState.IsValid)
             {
-                TrackingRecord trackingRecord = await trackingRecordService.GetByIdAsync(model.Id);
+                TrackingRecord trackingRecord = await trackingRecordGenericService.GetByIdAsync(model.Id);
                 if (trackingRecord != null)
                 {
                     trackingRecord.Transfer(model);
                     trackingRecord.UpdateUserId = appUserSessionService.Get().Id;
-                    await trackingRecordService.UpdateAsync(trackingRecord);
+                    await trackingRecordGenericService.UpdateAsync(trackingRecord);
                     return Json(new { IsOk = true, Massage = "Ürün Guncellendi" });
                 }
                 else

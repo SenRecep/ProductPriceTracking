@@ -11,5 +11,6 @@ namespace ProductPriceTracking.Entities.Concrete
         public string IconName { get; set; }
         public IEnumerable<PricePosition> PricePositions { get; set; }
         public IEnumerable<Product> Products { get; set; }
+        public IEnumerable<TrackingRecord> TrackingRecords { get; set; }
     }
 }

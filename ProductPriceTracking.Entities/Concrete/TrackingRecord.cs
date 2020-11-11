@@ -9,5 +9,7 @@ namespace ProductPriceTracking.Entities.Concrete
         public string Url { get; set; }
         public int ProductId { get; set; }
         public Product Product { get; set; }
+        public int WebsiteId { get; set; }
+        public Website Website { get; set; }
     }
 }

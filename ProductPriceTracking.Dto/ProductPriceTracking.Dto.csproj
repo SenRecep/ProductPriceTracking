@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProductPriceTracking.Core\ProductPriceTracking.Core.csproj" />
+    <ProjectReference Include="..\ProductPriceTracking.Entities\ProductPriceTracking.Entities.csproj" />
   </ItemGroup>
 
 </Project>
