@@ -1,14 +1,17 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Threading.Tasks;
+
+using AutoMapper;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+
 using ProductPriceTracking.Bll.ExtensionMethods;
 using ProductPriceTracking.Bll.Interfaces;
 using ProductPriceTracking.Dto.ProductDtos;
 using ProductPriceTracking.Entities.Concrete;
 using ProductPriceTracking.MvcUi.ExtensionMethods;
 using ProductPriceTracking.MvcUi.Services.Interfaces;
-using System;
-using System.Threading.Tasks;
 
 namespace ProductPriceTracking.MvcUi.Controllers
 {
@@ -30,7 +33,6 @@ namespace ProductPriceTracking.MvcUi.Controllers
         {
             return View();
         }
-
         [HttpGet]
         [Route("Urun-Ekle")]
         [Route("Urun-Ekle/{websiteId:int}")]

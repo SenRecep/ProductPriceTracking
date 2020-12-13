@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+
 using ProductPriceTracking.Dto.ProductDtos;
 using ProductPriceTracking.Entities.Concrete;
 

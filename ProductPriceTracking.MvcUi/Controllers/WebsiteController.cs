@@ -1,8 +1,13 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Threading.Tasks;
+
+using AutoMapper;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+
 using ProductPriceTracking.Bll.ExtensionMethods;
 using ProductPriceTracking.Bll.Interfaces;
 using ProductPriceTracking.Bll.StringInfo;
@@ -13,8 +18,6 @@ using ProductPriceTracking.MvcUi.ExtensionMethods;
 using ProductPriceTracking.MvcUi.Helpers;
 using ProductPriceTracking.MvcUi.Models;
 using ProductPriceTracking.MvcUi.Services.Interfaces;
-using System;
-using System.Threading.Tasks;
 
 namespace ProductPriceTracking.MvcUi.Controllers
 {

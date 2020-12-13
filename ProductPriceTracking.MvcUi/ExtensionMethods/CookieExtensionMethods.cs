@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System;
+
+using Microsoft.AspNetCore.Http;
+
 using Newtonsoft.Json;
-using System;
 
 namespace ProductPriceTracking.MvcUi.ExtensionMethods
 {

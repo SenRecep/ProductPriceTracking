@@ -38,7 +38,7 @@
                                         <tr>
                                             <td class="align-middle text-truncate">
                                                 @{
-                                                    string value = string.Concat(product.Url.Replace(website.BaseUrl, "").Take(50));
+                                                    string value = string.Concat(new Uri(product.Url).LocalPath.Take(50));
                                                 }
                                                 @value
                                                 @if (product.Url.Length > value.Length)

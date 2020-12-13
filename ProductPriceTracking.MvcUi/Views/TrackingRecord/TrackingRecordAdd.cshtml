@@ -9,11 +9,18 @@
 <form asp-action="TrackingRecordAdd" method="post">
     <div asp-validation-summary="ModelOnly" class="alert alert-warning" role="alert"></div>
     <div class="form-group">
-        <label>Website</label>
+        <label>Ürün</label>
         <select class="form-control w-100 custom-select " asp-for="ProductId" asp-items="await selectListService.GetProducts()">
             <option value="0">Bir Ürün Seçiniz</option>
         </select>
         <span asp-validation-for="ProductId"></span>
+    </div>
+    <div class="form-group">
+        <label>Website</label>
+        <select class="form-control w-100 custom-select " asp-for="WebsiteId" asp-items="await selectListService.GetWebsites()">
+            <option value="0">Bir Website Seçiniz</option>
+        </select>
+        <span asp-validation-for="WebsiteId"></span>
     </div>
     <div class="form-group">
         <label>Ad</label>
@@ -26,7 +33,7 @@
         <span asp-validation-for="Url"></span>
     </div>
     <div class="form-group text-center">
-        <a class="btn btn-sm btn-info mr-2 " style="width:110px" asp-action="TrackingRecordList"><i class="fas fa-user-plus"></i> Liste</a>
+        <a class="btn btn-sm btn-info mr-2 " style="width:110px" asp-action="TrackingRecordList" asp-route-productId="@Model.ProductId"><i class="fas fa-user-plus"></i> Liste</a>
         <button class="btn btn-sm btn-success ml-2 " style="width:110px" type="submit">
             <i class="fas fa-sign-in-alt"></i> Ekle
         </button>

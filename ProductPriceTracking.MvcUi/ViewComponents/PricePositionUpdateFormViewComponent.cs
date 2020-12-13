@@ -1,10 +1,13 @@
-﻿using AutoMapper;
+﻿using System.Threading.Tasks;
+
+using AutoMapper;
+
 using Microsoft.AspNetCore.Mvc;
+
 using ProductPriceTracking.Bll.Interfaces;
 using ProductPriceTracking.Dto.PricePositionDtos;
 using ProductPriceTracking.Entities.Concrete;
 using ProductPriceTracking.MvcUi.Models;
-using System.Threading.Tasks;
 
 
 namespace ProductPriceTracking.MvcUi.ViewComponents
@@ -16,7 +19,7 @@ namespace ProductPriceTracking.MvcUi.ViewComponents
 
         public PricePositionUpdateFormViewComponent(IGenericService<PricePosition> PricePositionService, IMapper mapper)
         {
-            this.pricePositionService = PricePositionService;
+            pricePositionService = PricePositionService;
             this.mapper = mapper;
         }
         public async Task<IViewComponentResult> InvokeAsync(UpdateModalViewModel model)

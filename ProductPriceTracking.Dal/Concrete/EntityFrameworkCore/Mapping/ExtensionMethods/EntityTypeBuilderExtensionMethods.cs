@@ -1,8 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ProductPriceTracking.Core.Entities.Interfaces;
-using System;
+﻿using System;
 using System.Linq.Expressions;
+
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+using ProductPriceTracking.Core.Entities.Interfaces;
 
 
 namespace ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Mapping.ExtensionMethods

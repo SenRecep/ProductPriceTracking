@@ -1,11 +1,13 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using ProductPriceTracking.MvcUi.Enums;
-using ProductPriceTracking.MvcUi.Models;
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+
+using ProductPriceTracking.MvcUi.Enums;
+using ProductPriceTracking.MvcUi.Models;
 
 namespace ProductPriceTracking.MvcUi.Helpers
 {

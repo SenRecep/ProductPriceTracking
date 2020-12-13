@@ -1,6 +1,12 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
+
+using AutoMapper;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+
 using ProductPriceTracking.Bll.ExtensionMethods;
 using ProductPriceTracking.Bll.Interfaces;
 using ProductPriceTracking.Dto.ProductDtos;
@@ -8,9 +14,6 @@ using ProductPriceTracking.Dto.TrackingRecordDtos;
 using ProductPriceTracking.Entities.Concrete;
 using ProductPriceTracking.MvcUi.ExtensionMethods;
 using ProductPriceTracking.MvcUi.Services.Interfaces;
-using System;
-using System.Threading.Tasks;
-
 
 namespace ProductPriceTracking.MvcUi.Controllers
 {
@@ -32,12 +35,12 @@ namespace ProductPriceTracking.MvcUi.Controllers
         public async Task<IActionResult> TrackingRecordList(int productId)
         {
             Product found = await trackingRecordService.GetLoadedProductById(productId);
-            var model = mapper.Map<ProductDto>(found);
+            ProductDto model = mapper.Map<ProductDto>(found);
             if (model.IsNull())
                 return NotFoundPage("Ürün Bulunamadı", "Lütfen doğru ürün bilgisi ile işlem yapın");
+            model.TrackingRecords = model.TrackingRecords.Where(x=>!x.IsDeleted);
             return View(model);
         }
-
         [HttpGet]
         [Route("Takipci-Ekle")]
         [Route("Takipci-Ekle/{productId:int}")]
@@ -86,7 +89,7 @@ namespace ProductPriceTracking.MvcUi.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Lütfen verilerı manipüle etmeyiniz");
+                    ModelState.AddModelError("", "Lütfen verileri manipüle etmeyiniz");
                     string messages = ModelState.GetErrorsString();
                     return Json(new { IsOk = false, Massage = messages });
                 }

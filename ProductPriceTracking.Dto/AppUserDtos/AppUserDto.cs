@@ -1,5 +1,6 @@
-﻿using ProductPriceTracking.Core.DTO.Interfaces;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+
+using ProductPriceTracking.Core.DTO.Interfaces;
 
 namespace ProductPriceTracking.Dto.AppUserDtos
 {

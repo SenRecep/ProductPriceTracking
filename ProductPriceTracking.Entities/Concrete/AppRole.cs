@@ -1,6 +1,7 @@
-﻿using ProductPriceTracking.Core.Entities.Concrete;
+﻿using System.Collections.Generic;
+
+using ProductPriceTracking.Core.Entities.Concrete;
 using ProductPriceTracking.Entities.Interfaces;
-using System.Collections.Generic;
 
 namespace ProductPriceTracking.Entities.Concrete
 {

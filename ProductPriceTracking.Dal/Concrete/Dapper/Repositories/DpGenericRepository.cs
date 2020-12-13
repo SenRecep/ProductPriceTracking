@@ -1,13 +1,14 @@
-﻿using Dapper;
-using Dapper.Contrib.Extensions;
-using ProductPriceTracking.Core.Entities.Interfaces;
-using ProductPriceTracking.Dal.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+
+using Dapper.Contrib.Extensions;
+
+using ProductPriceTracking.Core.Entities.Interfaces;
+using ProductPriceTracking.Dal.Interfaces;
 
 namespace ProductPriceTracking.Dal.Concrete.Dapper.Repositories
 {
@@ -28,7 +29,7 @@ namespace ProductPriceTracking.Dal.Concrete.Dapper.Repositories
 
         public async Task<ICollection<TEntity>> GetAllAsync()
         {
-            var list = await dbConnection.GetAllAsync<TEntity>();
+            IEnumerable<TEntity> list = await dbConnection.GetAllAsync<TEntity>();
             return list.ToList();
         }
 

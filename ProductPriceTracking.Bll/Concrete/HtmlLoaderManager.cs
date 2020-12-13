@@ -1,9 +1,11 @@
-﻿using HtmlAgilityPack;
+﻿using System.Net.Http;
+using System.Threading.Tasks;
+
+using HtmlAgilityPack;
+
 using ProductPriceTracking.Bll.ExtensionMethods;
 using ProductPriceTracking.Bll.Interfaces;
 using ProductPriceTracking.Dto.HtmlLoaderDtos;
-using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace ProductPriceTracking.Bll.Concrete
 {

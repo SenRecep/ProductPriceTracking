@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+
 using ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Mapping;
 using ProductPriceTracking.Entities.Concrete;
 

@@ -1,5 +1,6 @@
-﻿using ProductPriceTracking.Entities.Concrete;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+
+using ProductPriceTracking.Entities.Concrete;
 
 namespace ProductPriceTracking.Dal.Interfaces
 {

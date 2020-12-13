@@ -1,9 +1,11 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-using Serilog;
-using Serilog.Formatting.Compact;
 using System;
 using System.Threading.Tasks;
+
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+
+using Serilog;
+using Serilog.Formatting.Compact;
 
 namespace ProductPriceTracking.MvcUi
 {

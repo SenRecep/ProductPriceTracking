@@ -1,10 +1,12 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System;
+using System.Threading.Tasks;
+
+using Microsoft.Extensions.DependencyInjection;
+
 using ProductPriceTracking.Bll.Interfaces;
 using ProductPriceTracking.Bll.StringInfo;
 using ProductPriceTracking.Dto.AppUserDtos;
 using ProductPriceTracking.Entities.Concrete;
-using System;
-using System.Threading.Tasks;
 
 namespace ProductPriceTracking.Bll.ComplexTypes
 {

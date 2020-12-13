@@ -1,13 +1,16 @@
-﻿using FluentValidation.AspNetCore;
+﻿using System;
+
+using FluentValidation.AspNetCore;
+
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+
 using ProductPriceTracking.Bll.Containers.MicrosoftIOC;
 using ProductPriceTracking.MvcUi.Helpers;
 using ProductPriceTracking.MvcUi.Services.Concrete;
 using ProductPriceTracking.MvcUi.Services.Interfaces;
-using System;
 
 namespace ProductPriceTracking.MvcUi.Containers.MicrosoftIOC
 {

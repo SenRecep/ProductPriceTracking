@@ -1,10 +1,11 @@
-﻿using ProductPriceTracking.Bll.Helpers;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+
+using ProductPriceTracking.Bll.Helpers;
 using ProductPriceTracking.Bll.Interfaces;
 using ProductPriceTracking.Dal.Interfaces;
 using ProductPriceTracking.Dto.AppUserDtos;
 using ProductPriceTracking.Entities.Concrete;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ProductPriceTracking.Bll.Concrete
 {

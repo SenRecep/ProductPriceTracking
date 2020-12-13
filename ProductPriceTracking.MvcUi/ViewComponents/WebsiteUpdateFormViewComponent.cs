@@ -1,10 +1,13 @@
-﻿using AutoMapper;
+﻿using System.Threading.Tasks;
+
+using AutoMapper;
+
 using Microsoft.AspNetCore.Mvc;
+
 using ProductPriceTracking.Bll.Interfaces;
 using ProductPriceTracking.Dto.WebsiteDtos;
 using ProductPriceTracking.Entities.Concrete;
 using ProductPriceTracking.MvcUi.Models;
-using System.Threading.Tasks;
 
 namespace ProductPriceTracking.MvcUi.ViewComponents
 {

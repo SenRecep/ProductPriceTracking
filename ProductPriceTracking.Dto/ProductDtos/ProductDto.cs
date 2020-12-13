@@ -1,6 +1,7 @@
-﻿using ProductPriceTracking.Core.DTO.Interfaces;
+﻿using System.Collections.Generic;
+
+using ProductPriceTracking.Core.DTO.Interfaces;
 using ProductPriceTracking.Entities.Concrete;
-using System.Collections.Generic;
 
 namespace ProductPriceTracking.Dto.ProductDtos
 {

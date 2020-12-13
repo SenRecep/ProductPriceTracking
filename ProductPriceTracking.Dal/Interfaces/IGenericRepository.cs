@@ -1,8 +1,9 @@
-﻿using ProductPriceTracking.Core.Entities.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+
+using ProductPriceTracking.Core.Entities.Interfaces;
 
 namespace ProductPriceTracking.Dal.Interfaces
 {

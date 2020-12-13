@@ -13,6 +13,7 @@
                 <table class="table table-light table-striped table-hover mb-0">
                     <thead>
                         <tr>
+                            <th>Website</th>
                             <th>URL</th>
                             <th>Ad</th>
                             <th>İşlem</th>
@@ -21,35 +22,39 @@
                     <tbody>
                         @foreach (var trackingRecord in Model.TrackingRecords)
                         {
-                            <tr>
-                                <td class="align-middle text-truncate">
-                                    @{
-                                        string value = string.Concat(trackingRecord.Url.Replace(Model.Website.BaseUrl, "").Take(50));
-                                    }
-                                    @value
-                                    @if (trackingRecord.Url.Length > value.Length)
-                                    {
-                                        <button class="btn btn-link" data-value="@trackingRecord.Url" data-toggle="modal" data-target="#detailModal" style="box-shadow:none">...</button>
-                                    }
-                                </td>
-                                <td class="align-middle text-truncate">@trackingRecord.Name</td>
-                                <td class="align-middle">
-                                    <div class="d-flex justify-content-center">
-                                        <button type="button" class="btn btn-danger btn-sm deleteBtn" data-toggle="modal" data-target="#trackingRecordDeleteModal" data-trackingrecordid="@trackingRecord.Id"><i class="fas fa-trash-alt"></i></button>
-                                        <button type="button" class="btn btn-info btn-sm mx-2 updateBtn" data-toggle="modal" data-target="#trackingRecordUpdateModal"
-                                                data-productid="@Model.Id"
-                                                data-url="@trackingRecord.Url"
-                                                data-name="@trackingRecord.Name"
-                                                data-id="@trackingRecord.Id">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td class="align-middle text-truncate">@trackingRecord.Website?.Name</td>
+                            <td class="align-middle text-truncate">
+                                @{
+
+                                    string value = string.Concat(new Uri(trackingRecord.Url).LocalPath.Take(50));
+                                }
+                                @value
+                                @if (trackingRecord.Url.Length > value.Length)
+                                {
+                                    <button class="btn btn-link" data-value="@trackingRecord.Url" data-toggle="modal" data-target="#detailModal" style="box-shadow:none">...</button>
+                                }
+                            </td>
+                            <td class="align-middle text-truncate">@trackingRecord.Name</td>
+                            <td class="align-middle">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" class="btn btn-danger btn-sm deleteBtn" data-toggle="modal" data-target="#trackingRecordDeleteModal" data-trackingrecordid="@trackingRecord.Id"><i class="fas fa-trash-alt"></i></button>
+                                    <button type="button" class="btn btn-info btn-sm mx-2 updateBtn" data-toggle="modal" data-target="#trackingRecordUpdateModal"
+                                            data-productid="@Model.Id"
+                                            data-websiteid="@trackingRecord.WebsiteId"
+                                            data-url="@trackingRecord.Url"
+                                            data-name="@trackingRecord.Name"
+                                            data-id="@trackingRecord.Id">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
                         }
                     </tbody>
                     <tfoot>
                         <tr>
+                            <th>Website</th>
                             <th>URL</th>
                             <th>Ad</th>
                             <th>İşlem</th>
@@ -65,3 +70,88 @@
     </div>
     <div class="card-footer text-center">@Model.TrackingRecords.Count() Adet ürün takipcisi mevcut</div>
 </div>
+
+
+
+@section Modals{
+    <div class="modal fade" id="trackingRecordDeleteModal" tabindex="-1" role="dialog" aria-labelledby="Tracking Record Delete Modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ürün Takipcisi silinsin mi?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Ürün Takipcisi silinsin mi?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Vazgeç</button>
+                    <button type="button" class="btn btn-danger" id="trackingRecordProductModalBtn" data-trackingrecordid="0">Sil</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="trackingRecordUpdateModal" tabindex="-1" role="dialog" aria-labelledby="Tracking Record Update Modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ürün Takipçisi Güncelle</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @await Component.InvokeAsync(typeof(TrackingRecordUpdateFormViewComponent), new UpdateModalViewModel("trackingRecordUpdateModal", "trumSubmitBtn", 0))
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Vazgeç</button>
+                    <button type="button" class="btn btn-primary" id="trumSubmitBtn">Guncelle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+
+@section Scripts{
+    <script>
+          $('.deleteBtn').on("click", function () {
+              var id = $(this).data('trackingrecordid');
+              $('#trackingRecordProductModalBtn').data('trackingrecordid', id);
+        });
+        $('#trackingRecordProductModalBtn').click(function(event)  {
+            var id = $(event.target).data('trackingrecordid');
+            $.ajax({
+                url: `@Url.Action("TrackingRecordDelete", "TrackingRecord")?id=${id}`,
+                type: "DELETE",
+                contentType: "application/json; charset=utf-8",
+            }).done(_ => {
+                $('#trackingRecordDeleteModal').modal('hide');
+                window.location.reload();
+            });
+        });
+
+        $('.updateBtn').on("click", function () {
+            var trackingRecord = {
+                id: $(this).data('id'),
+                url: $(this).data('url'),
+                name: $(this).data('name'),
+                productid: $(this).data('productid'),
+                websiteid: $(this).data('websiteid')
+            }
+            $('#trackingRecordUpdateModal #Id').val(trackingRecord.id);
+            $('#trackingRecordUpdateModal #Name').val(trackingRecord.name);
+            $('#trackingRecordUpdateModal #Url').val(trackingRecord.url);
+            $('#trackingRecordUpdateModal #ProductId').val(trackingRecord.productid);
+            $('#trackingRecordUpdateModal #WebsiteId').val(trackingRecord.websiteid);
+        });
+
+    </script>
+}
+

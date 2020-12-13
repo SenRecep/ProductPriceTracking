@@ -1,7 +1,8 @@
-﻿using ProductPriceTracking.Dto.AppUserDtos;
-using ProductPriceTracking.Entities.Concrete;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+
+using ProductPriceTracking.Dto.AppUserDtos;
+using ProductPriceTracking.Entities.Concrete;
 
 namespace ProductPriceTracking.MvcUi.Helpers
 {

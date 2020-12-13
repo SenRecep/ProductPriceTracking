@@ -1,5 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
-using System.Linq;
+﻿using System.Linq;
+
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace ProductPriceTracking.MvcUi.ExtensionMethods
 {

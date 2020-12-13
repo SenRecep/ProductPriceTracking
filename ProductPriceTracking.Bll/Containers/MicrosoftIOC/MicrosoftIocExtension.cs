@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
+
 using FluentValidation;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+
 using ProductPriceTracking.Bll.Concrete;
 using ProductPriceTracking.Bll.Interfaces;
 using ProductPriceTracking.Bll.Mapping.AutoMapperProfile;
@@ -13,6 +16,7 @@ using ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Repositories;
 using ProductPriceTracking.Dal.Interfaces;
 using ProductPriceTracking.Dto.AppUserDtos;
 using ProductPriceTracking.Dto.ProductDtos;
+using ProductPriceTracking.Dto.TrackingRecordDtos;
 using ProductPriceTracking.Dto.WebsiteDtos;
 
 namespace ProductPriceTracking.Bll.Containers.MicrosoftIOC
@@ -40,7 +44,7 @@ namespace ProductPriceTracking.Bll.Containers.MicrosoftIOC
             services.AddScoped<IWebsiteService, WebsiteManager>();
             services.AddScoped<ITrackingRecordService, TrackingRecordManager>();
 
-            services.AddScoped<IAppUserDal, EfAppUserRepository>();
+            services.AddScoped<IAppUserDal,EfAppUserRepository>();
             services.AddScoped<IWebsiteDal, EfWebsiteRepository>();
             services.AddScoped<ITrackingRecordDal, EfTrackingRecordRepository>();
 
@@ -52,6 +56,7 @@ namespace ProductPriceTracking.Bll.Containers.MicrosoftIOC
             services.AddAutoMapper(typeof(AuthorizeProfile));
             services.AddAutoMapper(typeof(WebsiteProfile));
             services.AddAutoMapper(typeof(ProductProfile));
+            services.AddAutoMapper(typeof(TrackingRecordProfile));
         }
         public static void AddValidationDependencies(this IServiceCollection services)
         {
@@ -62,6 +67,8 @@ namespace ProductPriceTracking.Bll.Containers.MicrosoftIOC
             services.AddTransient<IValidator<WebsiteUpdateDto>, WebsiteUpdateDtoValidator>();
             services.AddTransient<IValidator<ProductAddDto>, ProductAddDtoValidator>();
             services.AddTransient<IValidator<ProductUpdateDto>, ProductUpdateDtoValidator>();
+            services.AddTransient<IValidator<TrackingRecordAddDto>, TrackingRecordAddDtoValidator>();
+            services.AddTransient<IValidator<TrackingRecordUpdateDto>, TrackingRecordUpdateDtoValidator>();
         }
     }
 }

@@ -1,6 +1,8 @@
-﻿using HtmlAgilityPack;
+﻿using System.Threading.Tasks;
+
+using HtmlAgilityPack;
+
 using ProductPriceTracking.Dto.HtmlLoaderDtos;
-using System.Threading.Tasks;
 
 namespace ProductPriceTracking.Bll.Interfaces
 {

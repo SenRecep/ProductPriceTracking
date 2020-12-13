@@ -1,8 +1,6 @@
-﻿using ProductPriceTracking.Entities.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+
+using ProductPriceTracking.Entities.Concrete;
 
 namespace ProductPriceTracking.Bll.Interfaces
 {

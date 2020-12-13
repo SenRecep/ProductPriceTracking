@@ -10,8 +10,8 @@ using ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Contexts;
 namespace ProductPriceTracking.MvcUi.Migrations
 {
     [DbContext(typeof(ProductPriceTrackingDbContext))]
-    [Migration("20201017133022_KeyToIndexError")]
-    partial class KeyToIndexError
+    [Migration("20201111120851_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -256,12 +256,17 @@ namespace ProductPriceTracking.MvcUi.Migrations
                         .HasColumnType("nvarchar(300)")
                         .HasMaxLength(300);
 
+                    b.Property<int>("WebsiteId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
 
                     b.HasIndex("Url")
                         .IsUnique();
+
+                    b.HasIndex("WebsiteId");
 
                     b.ToTable("TrackingRecords");
                 });
@@ -385,7 +390,13 @@ namespace ProductPriceTracking.MvcUi.Migrations
                     b.HasOne("ProductPriceTracking.Entities.Concrete.Product", "Product")
                         .WithMany("TrackingRecords")
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("ProductPriceTracking.Entities.Concrete.Website", "Website")
+                        .WithMany("TrackingRecords")
+                        .HasForeignKey("WebsiteId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 

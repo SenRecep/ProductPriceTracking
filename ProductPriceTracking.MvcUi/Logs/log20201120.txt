@@ -1,0 +1,160 @@
+2020-11-20 00:02:41.508 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/Takipci-Listesi/1  
+2020-11-20 00:02:41.532 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.TrackingRecordController.TrackingRecordList (ProductPriceTracking.MvcUi)'
+2020-11-20 00:02:41.537 +03:00 [INF] Route matched with {action = "TrackingRecordList", controller = "TrackingRecord"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] TrackingRecordList(Int32) on controller ProductPriceTracking.MvcUi.Controllers.TrackingRecordController (ProductPriceTracking.MvcUi).
+2020-11-20 00:02:41.550 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'ProductPriceTrackingDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=ProductPriceTracking.MvcUi 
+2020-11-20 00:02:41.571 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__productId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[CreateUserId], [t].[IsDeleted], [t].[Name], [t].[UpdateDate], [t].[UpdateUserId], [t].[Url], [t].[WebsiteId], [t].[Id0], [t].[BaseUrl], [t].[CreateDate0], [t].[CreateUserId0], [t].[IconName], [t].[IsDeleted0], [t].[Name0], [t].[UpdateDate0], [t].[UpdateUserId0], [t1].[Id], [t1].[CreateDate], [t1].[CreateUserId], [t1].[IsDeleted], [t1].[Name], [t1].[ProductId], [t1].[UpdateDate], [t1].[UpdateUserId], [t1].[Url], [t1].[WebsiteId], [t1].[Id0], [t1].[BaseUrl], [t1].[CreateDate0], [t1].[CreateUserId0], [t1].[IconName], [t1].[IsDeleted0], [t1].[Name0], [t1].[UpdateDate0], [t1].[UpdateUserId0]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[CreateDate], [p].[CreateUserId], [p].[IsDeleted], [p].[Name], [p].[UpdateDate], [p].[UpdateUserId], [p].[Url], [p].[WebsiteId], [w].[Id] AS [Id0], [w].[BaseUrl], [w].[CreateDate] AS [CreateDate0], [w].[CreateUserId] AS [CreateUserId0], [w].[IconName], [w].[IsDeleted] AS [IsDeleted0], [w].[Name] AS [Name0], [w].[UpdateDate] AS [UpdateDate0], [w].[UpdateUserId] AS [UpdateUserId0]
+    FROM [Products] AS [p]
+    INNER JOIN [Websites] AS [w] ON [p].[WebsiteId] = [w].[Id]
+    WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[Id] = @__productId_0)
+) AS [t]
+LEFT JOIN (
+    SELECT [t0].[Id], [t0].[CreateDate], [t0].[CreateUserId], [t0].[IsDeleted], [t0].[Name], [t0].[ProductId], [t0].[UpdateDate], [t0].[UpdateUserId], [t0].[Url], [t0].[WebsiteId], [w0].[Id] AS [Id0], [w0].[BaseUrl], [w0].[CreateDate] AS [CreateDate0], [w0].[CreateUserId] AS [CreateUserId0], [w0].[IconName], [w0].[IsDeleted] AS [IsDeleted0], [w0].[Name] AS [Name0], [w0].[UpdateDate] AS [UpdateDate0], [w0].[UpdateUserId] AS [UpdateUserId0]
+    FROM [TrackingRecords] AS [t0]
+    INNER JOIN [Websites] AS [w0] ON [t0].[WebsiteId] = [w0].[Id]
+) AS [t1] ON [t].[Id] = [t1].[ProductId]
+ORDER BY [t].[Id], [t].[Id0], [t1].[Id], [t1].[Id0]
+2020-11-20 00:02:47.377 +03:00 [INF] Executing ViewResult, running view TrackingRecordList.
+2020-11-20 00:02:54.611 +03:00 [INF] Executed ViewResult - view TrackingRecordList executed in 13033.082ms.
+2020-11-20 00:02:54.614 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.TrackingRecordController.TrackingRecordList (ProductPriceTracking.MvcUi) in 13073.4629ms
+2020-11-20 00:02:54.617 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.TrackingRecordController.TrackingRecordList (ProductPriceTracking.MvcUi)'
+2020-11-20 00:02:54.621 +03:00 [INF] Request finished in 13113.9962ms 200 text/html; charset=utf-8
+2020-11-20 00:02:54.899 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/favicon.ico  
+2020-11-20 00:02:54.907 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\wwwroot\favicon.ico'
+2020-11-20 00:02:54.910 +03:00 [INF] Request finished in 10.841ms 200 image/x-icon
+2020-11-20 00:04:57.451 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/Takipci-Listesi/1  
+2020-11-20 00:04:57.467 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.TrackingRecordController.TrackingRecordList (ProductPriceTracking.MvcUi)'
+2020-11-20 00:04:57.471 +03:00 [INF] Route matched with {action = "TrackingRecordList", controller = "TrackingRecord"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] TrackingRecordList(Int32) on controller ProductPriceTracking.MvcUi.Controllers.TrackingRecordController (ProductPriceTracking.MvcUi).
+2020-11-20 00:04:57.480 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'ProductPriceTrackingDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=ProductPriceTracking.MvcUi 
+2020-11-20 00:04:57.498 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__productId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[CreateUserId], [t].[IsDeleted], [t].[Name], [t].[UpdateDate], [t].[UpdateUserId], [t].[Url], [t].[WebsiteId], [t].[Id0], [t].[BaseUrl], [t].[CreateDate0], [t].[CreateUserId0], [t].[IconName], [t].[IsDeleted0], [t].[Name0], [t].[UpdateDate0], [t].[UpdateUserId0], [t1].[Id], [t1].[CreateDate], [t1].[CreateUserId], [t1].[IsDeleted], [t1].[Name], [t1].[ProductId], [t1].[UpdateDate], [t1].[UpdateUserId], [t1].[Url], [t1].[WebsiteId], [t1].[Id0], [t1].[BaseUrl], [t1].[CreateDate0], [t1].[CreateUserId0], [t1].[IconName], [t1].[IsDeleted0], [t1].[Name0], [t1].[UpdateDate0], [t1].[UpdateUserId0]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[CreateDate], [p].[CreateUserId], [p].[IsDeleted], [p].[Name], [p].[UpdateDate], [p].[UpdateUserId], [p].[Url], [p].[WebsiteId], [w].[Id] AS [Id0], [w].[BaseUrl], [w].[CreateDate] AS [CreateDate0], [w].[CreateUserId] AS [CreateUserId0], [w].[IconName], [w].[IsDeleted] AS [IsDeleted0], [w].[Name] AS [Name0], [w].[UpdateDate] AS [UpdateDate0], [w].[UpdateUserId] AS [UpdateUserId0]
+    FROM [Products] AS [p]
+    INNER JOIN [Websites] AS [w] ON [p].[WebsiteId] = [w].[Id]
+    WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[Id] = @__productId_0)
+) AS [t]
+LEFT JOIN (
+    SELECT [t0].[Id], [t0].[CreateDate], [t0].[CreateUserId], [t0].[IsDeleted], [t0].[Name], [t0].[ProductId], [t0].[UpdateDate], [t0].[UpdateUserId], [t0].[Url], [t0].[WebsiteId], [w0].[Id] AS [Id0], [w0].[BaseUrl], [w0].[CreateDate] AS [CreateDate0], [w0].[CreateUserId] AS [CreateUserId0], [w0].[IconName], [w0].[IsDeleted] AS [IsDeleted0], [w0].[Name] AS [Name0], [w0].[UpdateDate] AS [UpdateDate0], [w0].[UpdateUserId] AS [UpdateUserId0]
+    FROM [TrackingRecords] AS [t0]
+    INNER JOIN [Websites] AS [w0] ON [t0].[WebsiteId] = [w0].[Id]
+) AS [t1] ON [t].[Id] = [t1].[ProductId]
+ORDER BY [t].[Id], [t].[Id0], [t1].[Id], [t1].[Id0]
+2020-11-20 00:04:58.258 +03:00 [INF] Executing ViewResult, running view TrackingRecordList.
+2020-11-20 00:05:18.930 +03:00 [INF] Executed ViewResult - view TrackingRecordList executed in 21427.7166ms.
+2020-11-20 00:05:18.937 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.TrackingRecordController.TrackingRecordList (ProductPriceTracking.MvcUi) in 21464.0144ms
+2020-11-20 00:05:18.940 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.TrackingRecordController.TrackingRecordList (ProductPriceTracking.MvcUi)'
+2020-11-20 00:05:18.943 +03:00 [INF] Request finished in 21492.7219ms 200 text/html; charset=utf-8
+2020-11-20 00:05:19.206 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/favicon.ico  
+2020-11-20 00:05:19.211 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\wwwroot\favicon.ico'
+2020-11-20 00:05:19.215 +03:00 [INF] Request finished in 8.7787ms 200 image/x-icon
+2020-11-20 00:05:27.936 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/Takipci-Listesi/1  
+2020-11-20 00:05:27.939 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.TrackingRecordController.TrackingRecordList (ProductPriceTracking.MvcUi)'
+2020-11-20 00:05:27.942 +03:00 [INF] Route matched with {action = "TrackingRecordList", controller = "TrackingRecord"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] TrackingRecordList(Int32) on controller ProductPriceTracking.MvcUi.Controllers.TrackingRecordController (ProductPriceTracking.MvcUi).
+2020-11-20 00:05:27.948 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'ProductPriceTrackingDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=ProductPriceTracking.MvcUi 
+2020-11-20 00:05:27.964 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__productId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[CreateUserId], [t].[IsDeleted], [t].[Name], [t].[UpdateDate], [t].[UpdateUserId], [t].[Url], [t].[WebsiteId], [t].[Id0], [t].[BaseUrl], [t].[CreateDate0], [t].[CreateUserId0], [t].[IconName], [t].[IsDeleted0], [t].[Name0], [t].[UpdateDate0], [t].[UpdateUserId0], [t1].[Id], [t1].[CreateDate], [t1].[CreateUserId], [t1].[IsDeleted], [t1].[Name], [t1].[ProductId], [t1].[UpdateDate], [t1].[UpdateUserId], [t1].[Url], [t1].[WebsiteId], [t1].[Id0], [t1].[BaseUrl], [t1].[CreateDate0], [t1].[CreateUserId0], [t1].[IconName], [t1].[IsDeleted0], [t1].[Name0], [t1].[UpdateDate0], [t1].[UpdateUserId0]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[CreateDate], [p].[CreateUserId], [p].[IsDeleted], [p].[Name], [p].[UpdateDate], [p].[UpdateUserId], [p].[Url], [p].[WebsiteId], [w].[Id] AS [Id0], [w].[BaseUrl], [w].[CreateDate] AS [CreateDate0], [w].[CreateUserId] AS [CreateUserId0], [w].[IconName], [w].[IsDeleted] AS [IsDeleted0], [w].[Name] AS [Name0], [w].[UpdateDate] AS [UpdateDate0], [w].[UpdateUserId] AS [UpdateUserId0]
+    FROM [Products] AS [p]
+    INNER JOIN [Websites] AS [w] ON [p].[WebsiteId] = [w].[Id]
+    WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[Id] = @__productId_0)
+) AS [t]
+LEFT JOIN (
+    SELECT [t0].[Id], [t0].[CreateDate], [t0].[CreateUserId], [t0].[IsDeleted], [t0].[Name], [t0].[ProductId], [t0].[UpdateDate], [t0].[UpdateUserId], [t0].[Url], [t0].[WebsiteId], [w0].[Id] AS [Id0], [w0].[BaseUrl], [w0].[CreateDate] AS [CreateDate0], [w0].[CreateUserId] AS [CreateUserId0], [w0].[IconName], [w0].[IsDeleted] AS [IsDeleted0], [w0].[Name] AS [Name0], [w0].[UpdateDate] AS [UpdateDate0], [w0].[UpdateUserId] AS [UpdateUserId0]
+    FROM [TrackingRecords] AS [t0]
+    INNER JOIN [Websites] AS [w0] ON [t0].[WebsiteId] = [w0].[Id]
+) AS [t1] ON [t].[Id] = [t1].[ProductId]
+ORDER BY [t].[Id], [t].[Id0], [t1].[Id], [t1].[Id0]
+2020-11-20 00:05:28.139 +03:00 [INF] Executing ViewResult, running view TrackingRecordList.
+2020-11-20 00:05:33.855 +03:00 [INF] Executed ViewResult - view TrackingRecordList executed in 5882.0685ms.
+2020-11-20 00:05:33.858 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.TrackingRecordController.TrackingRecordList (ProductPriceTracking.MvcUi) in 5912.744ms
+2020-11-20 00:05:33.860 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.TrackingRecordController.TrackingRecordList (ProductPriceTracking.MvcUi)'
+2020-11-20 00:05:33.864 +03:00 [INF] Request finished in 5927.8724ms 200 text/html; charset=utf-8
+2020-11-20 00:05:34.050 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/favicon.ico  
+2020-11-20 00:05:34.061 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\wwwroot\favicon.ico'
+2020-11-20 00:05:34.063 +03:00 [INF] Request finished in 12.9461ms 200 image/x-icon
+2020-11-20 00:06:36.254 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/Takipci-Listesi/1  
+2020-11-20 00:06:36.258 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.TrackingRecordController.TrackingRecordList (ProductPriceTracking.MvcUi)'
+2020-11-20 00:06:36.262 +03:00 [INF] Route matched with {action = "TrackingRecordList", controller = "TrackingRecord"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] TrackingRecordList(Int32) on controller ProductPriceTracking.MvcUi.Controllers.TrackingRecordController (ProductPriceTracking.MvcUi).
+2020-11-20 00:06:36.270 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'ProductPriceTrackingDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=ProductPriceTracking.MvcUi 
+2020-11-20 00:06:36.285 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__productId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[CreateUserId], [t].[IsDeleted], [t].[Name], [t].[UpdateDate], [t].[UpdateUserId], [t].[Url], [t].[WebsiteId], [t].[Id0], [t].[BaseUrl], [t].[CreateDate0], [t].[CreateUserId0], [t].[IconName], [t].[IsDeleted0], [t].[Name0], [t].[UpdateDate0], [t].[UpdateUserId0], [t1].[Id], [t1].[CreateDate], [t1].[CreateUserId], [t1].[IsDeleted], [t1].[Name], [t1].[ProductId], [t1].[UpdateDate], [t1].[UpdateUserId], [t1].[Url], [t1].[WebsiteId], [t1].[Id0], [t1].[BaseUrl], [t1].[CreateDate0], [t1].[CreateUserId0], [t1].[IconName], [t1].[IsDeleted0], [t1].[Name0], [t1].[UpdateDate0], [t1].[UpdateUserId0]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[CreateDate], [p].[CreateUserId], [p].[IsDeleted], [p].[Name], [p].[UpdateDate], [p].[UpdateUserId], [p].[Url], [p].[WebsiteId], [w].[Id] AS [Id0], [w].[BaseUrl], [w].[CreateDate] AS [CreateDate0], [w].[CreateUserId] AS [CreateUserId0], [w].[IconName], [w].[IsDeleted] AS [IsDeleted0], [w].[Name] AS [Name0], [w].[UpdateDate] AS [UpdateDate0], [w].[UpdateUserId] AS [UpdateUserId0]
+    FROM [Products] AS [p]
+    INNER JOIN [Websites] AS [w] ON [p].[WebsiteId] = [w].[Id]
+    WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[Id] = @__productId_0)
+) AS [t]
+LEFT JOIN (
+    SELECT [t0].[Id], [t0].[CreateDate], [t0].[CreateUserId], [t0].[IsDeleted], [t0].[Name], [t0].[ProductId], [t0].[UpdateDate], [t0].[UpdateUserId], [t0].[Url], [t0].[WebsiteId], [w0].[Id] AS [Id0], [w0].[BaseUrl], [w0].[CreateDate] AS [CreateDate0], [w0].[CreateUserId] AS [CreateUserId0], [w0].[IconName], [w0].[IsDeleted] AS [IsDeleted0], [w0].[Name] AS [Name0], [w0].[UpdateDate] AS [UpdateDate0], [w0].[UpdateUserId] AS [UpdateUserId0]
+    FROM [TrackingRecords] AS [t0]
+    INNER JOIN [Websites] AS [w0] ON [t0].[WebsiteId] = [w0].[Id]
+) AS [t1] ON [t].[Id] = [t1].[ProductId]
+ORDER BY [t].[Id], [t].[Id0], [t1].[Id], [t1].[Id0]
+2020-11-20 00:06:36.624 +03:00 [INF] Executing ViewResult, running view TrackingRecordList.
+2020-11-20 00:06:36.634 +03:00 [INF] Executed ViewResult - view TrackingRecordList executed in 345.0464ms.
+2020-11-20 00:06:36.638 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.TrackingRecordController.TrackingRecordList (ProductPriceTracking.MvcUi) in 373.6848ms
+2020-11-20 00:06:36.642 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.TrackingRecordController.TrackingRecordList (ProductPriceTracking.MvcUi)'
+2020-11-20 00:06:36.646 +03:00 [INF] Request finished in 391.948ms 200 text/html; charset=utf-8
+2020-11-20 00:06:36.857 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/favicon.ico  
+2020-11-20 00:06:36.862 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\wwwroot\favicon.ico'
+2020-11-20 00:06:36.865 +03:00 [INF] Request finished in 9.0693ms 200 image/x-icon
+2020-11-20 00:07:15.604 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/Urun-Listesi  
+2020-11-20 00:07:15.607 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.ProductController.ProductList (ProductPriceTracking.MvcUi)'
+2020-11-20 00:07:15.612 +03:00 [INF] Route matched with {action = "ProductList", controller = "Product"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ProductList() on controller ProductPriceTracking.MvcUi.Controllers.ProductController (ProductPriceTracking.MvcUi).
+2020-11-20 00:07:15.617 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'ProductPriceTrackingDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=ProductPriceTracking.MvcUi 
+2020-11-20 00:07:16.071 +03:00 [INF] Executing ViewResult, running view ProductList.
+2020-11-20 00:07:16.091 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[BaseUrl], [w].[CreateDate], [w].[CreateUserId], [w].[IconName], [w].[IsDeleted], [w].[Name], [w].[UpdateDate], [w].[UpdateUserId], [p].[Id], [p].[CreateDate], [p].[CreateUserId], [p].[IsDeleted], [p].[Name], [p].[UpdateDate], [p].[UpdateUserId], [p].[Url], [p].[WebsiteId], [p0].[Id], [p0].[CreateDate], [p0].[CreateUserId], [p0].[IsDeleted], [p0].[Priority], [p0].[UpdateDate], [p0].[UpdateUserId], [p0].[WebsiteId], [p0].[XPath]
+FROM [Websites] AS [w]
+LEFT JOIN [Products] AS [p] ON [w].[Id] = [p].[WebsiteId]
+LEFT JOIN [PricePositions] AS [p0] ON [w].[Id] = [p0].[WebsiteId]
+WHERE [w].[IsDeleted] <> CAST(1 AS bit)
+ORDER BY (
+    SELECT COUNT(*)
+    FROM [Products] AS [p1]
+    WHERE [w].[Id] = [p1].[WebsiteId]) DESC, [w].[Name], [w].[Id], [p].[Id], [p0].[Id]
+2020-11-20 00:07:16.104 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CreateDate], [p].[CreateUserId], [p].[IsDeleted], [p].[Name], [p].[UpdateDate], [p].[UpdateUserId], [p].[Url], [p].[WebsiteId]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__Id_0
+2020-11-20 00:07:16.112 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[BaseUrl], [w].[CreateDate], [w].[CreateUserId], [w].[IconName], [w].[IsDeleted], [w].[Name], [w].[UpdateDate], [w].[UpdateUserId]
+FROM [Websites] AS [w]
+WHERE [w].[IsDeleted] <> CAST(1 AS bit)
+2020-11-20 00:07:16.118 +03:00 [INF] Executed ViewResult - view ProductList executed in 497.3892ms.
+2020-11-20 00:07:16.121 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.ProductController.ProductList (ProductPriceTracking.MvcUi) in 506.0812ms
+2020-11-20 00:07:16.125 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.ProductController.ProductList (ProductPriceTracking.MvcUi)'
+2020-11-20 00:07:16.129 +03:00 [INF] Request finished in 525.7622ms 200 text/html; charset=utf-8
+2020-11-20 00:07:24.603 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/Takipci-Listesi/1  
+2020-11-20 00:07:24.607 +03:00 [INF] Executing endpoint 'ProductPriceTracking.MvcUi.Controllers.TrackingRecordController.TrackingRecordList (ProductPriceTracking.MvcUi)'
+2020-11-20 00:07:24.609 +03:00 [INF] Route matched with {action = "TrackingRecordList", controller = "TrackingRecord"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] TrackingRecordList(Int32) on controller ProductPriceTracking.MvcUi.Controllers.TrackingRecordController (ProductPriceTracking.MvcUi).
+2020-11-20 00:07:24.613 +03:00 [INF] Entity Framework Core 3.1.9 initialized 'ProductPriceTrackingDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=ProductPriceTracking.MvcUi 
+2020-11-20 00:07:24.628 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__productId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[CreateUserId], [t].[IsDeleted], [t].[Name], [t].[UpdateDate], [t].[UpdateUserId], [t].[Url], [t].[WebsiteId], [t].[Id0], [t].[BaseUrl], [t].[CreateDate0], [t].[CreateUserId0], [t].[IconName], [t].[IsDeleted0], [t].[Name0], [t].[UpdateDate0], [t].[UpdateUserId0], [t1].[Id], [t1].[CreateDate], [t1].[CreateUserId], [t1].[IsDeleted], [t1].[Name], [t1].[ProductId], [t1].[UpdateDate], [t1].[UpdateUserId], [t1].[Url], [t1].[WebsiteId], [t1].[Id0], [t1].[BaseUrl], [t1].[CreateDate0], [t1].[CreateUserId0], [t1].[IconName], [t1].[IsDeleted0], [t1].[Name0], [t1].[UpdateDate0], [t1].[UpdateUserId0]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[CreateDate], [p].[CreateUserId], [p].[IsDeleted], [p].[Name], [p].[UpdateDate], [p].[UpdateUserId], [p].[Url], [p].[WebsiteId], [w].[Id] AS [Id0], [w].[BaseUrl], [w].[CreateDate] AS [CreateDate0], [w].[CreateUserId] AS [CreateUserId0], [w].[IconName], [w].[IsDeleted] AS [IsDeleted0], [w].[Name] AS [Name0], [w].[UpdateDate] AS [UpdateDate0], [w].[UpdateUserId] AS [UpdateUserId0]
+    FROM [Products] AS [p]
+    INNER JOIN [Websites] AS [w] ON [p].[WebsiteId] = [w].[Id]
+    WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[Id] = @__productId_0)
+) AS [t]
+LEFT JOIN (
+    SELECT [t0].[Id], [t0].[CreateDate], [t0].[CreateUserId], [t0].[IsDeleted], [t0].[Name], [t0].[ProductId], [t0].[UpdateDate], [t0].[UpdateUserId], [t0].[Url], [t0].[WebsiteId], [w0].[Id] AS [Id0], [w0].[BaseUrl], [w0].[CreateDate] AS [CreateDate0], [w0].[CreateUserId] AS [CreateUserId0], [w0].[IconName], [w0].[IsDeleted] AS [IsDeleted0], [w0].[Name] AS [Name0], [w0].[UpdateDate] AS [UpdateDate0], [w0].[UpdateUserId] AS [UpdateUserId0]
+    FROM [TrackingRecords] AS [t0]
+    INNER JOIN [Websites] AS [w0] ON [t0].[WebsiteId] = [w0].[Id]
+) AS [t1] ON [t].[Id] = [t1].[ProductId]
+ORDER BY [t].[Id], [t].[Id0], [t1].[Id], [t1].[Id0]
+2020-11-20 00:07:24.848 +03:00 [INF] Executing ViewResult, running view TrackingRecordList.
+2020-11-20 00:07:24.860 +03:00 [INF] Executed ViewResult - view TrackingRecordList executed in 228.0717ms.
+2020-11-20 00:07:24.863 +03:00 [INF] Executed action ProductPriceTracking.MvcUi.Controllers.TrackingRecordController.TrackingRecordList (ProductPriceTracking.MvcUi) in 251.3183ms
+2020-11-20 00:07:24.867 +03:00 [INF] Executed endpoint 'ProductPriceTracking.MvcUi.Controllers.TrackingRecordController.TrackingRecordList (ProductPriceTracking.MvcUi)'
+2020-11-20 00:07:24.871 +03:00 [INF] Request finished in 268.4904ms 200 text/html; charset=utf-8
+2020-11-20 00:07:31.897 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/lib/twitter-bootstrap/js/bootstrap.bundle.min.js.map  
+2020-11-20 00:07:31.900 +03:00 [INF] Request starting HTTP/2.0 GET https://localhost:44384/lib/twitter-bootstrap/js/bootstrap.min.js.map  
+2020-11-20 00:07:32.258 +03:00 [INF] Sending file. Request path: '/lib/twitter-bootstrap/js/bootstrap.min.js.map'. Physical path: 'C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\wwwroot\lib\twitter-bootstrap\js\bootstrap.min.js.map'
+2020-11-20 00:07:32.261 +03:00 [INF] Request finished in 361.0232ms 200 text/plain
+2020-11-20 00:07:32.269 +03:00 [INF] Sending file. Request path: '/lib/twitter-bootstrap/js/bootstrap.bundle.min.js.map'. Physical path: 'C:\Users\recep\source\repos\ProductPriceTracking\ProductPriceTracking.MvcUi\wwwroot\lib\twitter-bootstrap\js\bootstrap.bundle.min.js.map'
+2020-11-20 00:07:32.272 +03:00 [INF] Request finished in 375.3978ms 200 text/plain

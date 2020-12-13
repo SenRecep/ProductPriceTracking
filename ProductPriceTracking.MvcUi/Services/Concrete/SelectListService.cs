@@ -1,12 +1,15 @@
-﻿using AutoMapper.Internal;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+using AutoMapper.Internal;
+
 using Microsoft.AspNetCore.Mvc.Rendering;
+
 using ProductPriceTracking.Bll.Interfaces;
 using ProductPriceTracking.Dal.Interfaces;
 using ProductPriceTracking.Entities.Concrete;
 using ProductPriceTracking.MvcUi.Services.Interfaces;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProductPriceTracking.MvcUi.Services.Concrete
 {
@@ -24,10 +27,10 @@ namespace ProductPriceTracking.MvcUi.Services.Concrete
         public async Task<IEnumerable<SelectListItem>> GetProducts()
         {
             List<SelectListItem> items = new List<SelectListItem>();
-            var websites = await websiteService.GetWebsites();
+            ICollection<Website> websites = await websiteService.GetWebsites();
             websites.ForAll(website =>
             {
-                var group = new SelectListGroup() { Name = website.Name };
+                SelectListGroup group = new SelectListGroup() { Name = website.Name };
                 items.AddRange(website.Products.Select(x => new SelectListItem(x.Name, x.Id.ToString()) { Group = group }));
             });
             return items;

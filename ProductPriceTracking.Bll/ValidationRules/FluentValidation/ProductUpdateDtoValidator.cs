@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+
 using ProductPriceTracking.Dto.ProductDtos;
 
 namespace ProductPriceTracking.Bll.ValidationRules.FluentValidation

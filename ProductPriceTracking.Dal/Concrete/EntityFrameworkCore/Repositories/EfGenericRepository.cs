@@ -1,12 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ProductPriceTracking.Core.Entities.Interfaces;
-using ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Contexts;
-using ProductPriceTracking.Dal.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+
+using Microsoft.EntityFrameworkCore;
+
+using ProductPriceTracking.Core.Entities.Interfaces;
+using ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Contexts;
+using ProductPriceTracking.Dal.Interfaces;
 
 namespace ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Repositories
 {

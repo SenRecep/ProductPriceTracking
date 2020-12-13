@@ -1,9 +1,10 @@
-﻿using ProductPriceTracking.Core.DTO.Interfaces;
-using ProductPriceTracking.Core.Entities.Concrete;
-using ProductPriceTracking.Core.Entities.Interfaces;
-using System;
+﻿using System;
 using System.Linq;
 using System.Reflection;
+
+using ProductPriceTracking.Core.DTO.Interfaces;
+using ProductPriceTracking.Core.Entities.Concrete;
+using ProductPriceTracking.Core.Entities.Interfaces;
 
 namespace ProductPriceTracking.Bll.ExtensionMethods
 {
