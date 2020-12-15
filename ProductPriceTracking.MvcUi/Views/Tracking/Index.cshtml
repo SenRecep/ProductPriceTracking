@@ -1,0 +1,7 @@
+﻿@model ICollection<Website>
+
+@foreach (var item in Model)
+{
+    <p>@item.Products.Count()</p>
+    <p>@item.PricePositions.Count()</p>
+}

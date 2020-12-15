@@ -19,6 +19,7 @@ namespace ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Contexts
             modelBuilder.ApplyConfiguration(new AppRoleMap());
             modelBuilder.ApplyConfiguration(new AppUserMap());
             modelBuilder.ApplyConfiguration(new UserRoleMap());
+            modelBuilder.ApplyConfiguration(new UserWebsiteMap());
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Website> Websites { get; set; }
@@ -28,5 +29,6 @@ namespace ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Contexts
         public DbSet<AppRole> AppRoles { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<UserWebsite> UserWebsites { get; set; }
     }
 }

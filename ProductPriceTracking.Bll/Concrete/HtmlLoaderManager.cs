@@ -59,12 +59,15 @@ namespace ProductPriceTracking.Bll.Concrete
         }
         public HtmlDocument GetHtmlDocumentByHtmlLoaderResponse(HtmlLoaderResponse response)
         {
-            HtmlDocument htmlDocument = new HtmlDocument();
+            var htmlDocument = new HtmlDocument();
             if (response.Status == HtmlLoaderStatus.Success)
-            {
                 htmlDocument.LoadHtml(response.Content);
-            }
             return htmlDocument;
+        }
+        public async Task<HtmlDocument> GetHtmlDocumentByHtmlLoaderResponseAsync(string url)
+        {
+            var content = await GetWebsiteContentByUrlAsync(url);
+            return GetHtmlDocumentByHtmlLoaderResponse(content);
         }
     }
 }

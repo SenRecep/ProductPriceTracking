@@ -1,10 +1,7 @@
-﻿using System;
-using System.Linq;
-using System.Reflection;
-
+﻿
 using ProductPriceTracking.Core.DTO.Interfaces;
-using ProductPriceTracking.Core.Entities.Concrete;
 using ProductPriceTracking.Core.Entities.Interfaces;
+
 
 namespace ProductPriceTracking.Bll.ExtensionMethods
 {
@@ -12,41 +9,22 @@ namespace ProductPriceTracking.Bll.ExtensionMethods
     {
         public static void Transfer(this IEntityBase entity, IDto dto)
         {
-            DataTransfer(entity, dto);
+            Entities.ExtensionMethods.EntityDataTransfer.DataTransfer(entity, dto);
         }
 
         public static void Transfer(this IDto dto, IEntityBase entity)
         {
-            DataTransfer(dto, entity);
+            Entities.ExtensionMethods.EntityDataTransfer.DataTransfer(dto, entity);
         }
 
         public static void Transfer(this IEntityBase entity, IEntityBase dto)
         {
-            DataTransfer(entity, dto);
+            Entities.ExtensionMethods.EntityDataTransfer.DataTransfer(entity, dto);
         }
 
         public static void Transfer(this IDto dto, IDto entity)
         {
-            DataTransfer(dto, entity);
-        }
-
-        public static void DataTransfer(object left, object right)
-        {
-            Type leftType = left.GetType();
-            Type rightType = right.GetType();
-            PropertyInfo[] rightProperties = rightType.GetProperties();
-            PropertyInfo[] leftProperties = leftType.GetProperties();
-            rightProperties.ToList().ForEach((r) =>
-            {
-                if (!r.Name.Equals(nameof(EntityBase.Id)))
-                {
-                    PropertyInfo l = leftProperties.FirstOrDefault(x => x.Name.Equals(r.Name));
-                    if (l != null)
-                        if (l.GetType().Equals(r.GetType()))
-                            l.SetValue(left, r.GetValue(right));
-                }
-
-            });
+            Entities.ExtensionMethods.EntityDataTransfer.DataTransfer(dto, entity);
         }
     }
 }

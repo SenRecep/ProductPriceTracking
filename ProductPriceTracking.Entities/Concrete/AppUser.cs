@@ -11,6 +11,7 @@ namespace ProductPriceTracking.Entities.Concrete
         public string FullName { get; set; }
         public string Password { get; set; }
         public IEnumerable<UserRole> UserRoles { get; set; }
+        public IEnumerable<UserWebsite> UserWebsites { get; set; }
 
     }
 }

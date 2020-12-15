@@ -10,5 +10,7 @@ namespace ProductPriceTracking.Bll.Interfaces
     {
         public Task<HtmlLoaderResponse> GetWebsiteContentByUrlAsync(string url);
         public HtmlDocument GetHtmlDocumentByHtmlLoaderResponse(HtmlLoaderResponse response);
+        public Task<HtmlDocument> GetHtmlDocumentByHtmlLoaderResponseAsync(string url);
+
     }
 }

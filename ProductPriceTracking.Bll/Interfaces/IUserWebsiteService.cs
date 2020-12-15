@@ -5,8 +5,8 @@ using ProductPriceTracking.Entities.Concrete;
 
 namespace ProductPriceTracking.Bll.Interfaces
 {
-    public interface ITrackingRecordService
+    public interface IUserWebsiteService
     {
-        Task<Product> GetLoadedProductById(int productId);
+       Task<ICollection<Website>> GetWebsitesByUserId(int userId);
     }
 }

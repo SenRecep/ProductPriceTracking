@@ -11,5 +11,7 @@ namespace ProductPriceTracking.Entities.Interfaces
         string BaseUrl { get; set; }
         string IconName { get; set; }
         IEnumerable<PricePosition> PricePositions { get; set; }
+         IEnumerable<UserWebsite> UserWebsites { get; set; }
+
     }
 }

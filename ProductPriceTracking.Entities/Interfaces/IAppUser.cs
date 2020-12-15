@@ -11,5 +11,7 @@ namespace ProductPriceTracking.Entities.Interfaces
         string FullName { get; set; }
         string Password { get; set; }
         IEnumerable<UserRole> UserRoles { get; set; }
+         IEnumerable<UserWebsite> UserWebsites { get; set; }
+
     }
 }

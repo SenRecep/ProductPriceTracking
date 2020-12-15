@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 using Microsoft.EntityFrameworkCore;
 
@@ -23,5 +24,6 @@ namespace ProductPriceTracking.Dal.Concrete.EntityFrameworkCore.Repositories
                 .Include(x => x.TrackingRecords).ThenInclude(x => x.Website).Include(x => x.Website)
                 .FirstOrDefaultAsync(x => !x.IsDeleted && x.Id == productId);
         }
+
     }
 }

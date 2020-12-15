@@ -8,5 +8,6 @@ namespace ProductPriceTracking.Dal.Interfaces
     public interface IWebsiteDal
     {
         Task<ICollection<Website>> GetWebsites();
+        Task<ICollection<Website>> GetWebsitesByUserId(int userId);
     }
 }

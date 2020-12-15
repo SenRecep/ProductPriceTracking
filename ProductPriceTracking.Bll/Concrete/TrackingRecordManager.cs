@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 using ProductPriceTracking.Bll.Interfaces;
 using ProductPriceTracking.Dal.Interfaces;
@@ -18,5 +19,6 @@ namespace ProductPriceTracking.Bll.Concrete
         {
             return await trackingRecordDal.GetLoadedProductById(productId);
         }
+
     }
 }
